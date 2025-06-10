@@ -16,7 +16,35 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: bd9e5590f1c2ab844a2a6535e790e478
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: c17de57489c89564b917b9bd8c2c2819
+    m_Address: Assets/ToBundle/Prefabs/TestView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5fd21c4ecbc30b64393676672c6a6093
+    m_Address: Assets/ToBundle/Prefabs/PetView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 96007cd47c6654348af6f492b49ff461
+    m_Address: Assets/ToBundle/Prefabs/TestFolder/TestView2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aafdebb77d1d01749bf87bdddbe76e63
+    m_Address: Assets/ToBundle/Prefabs/TetrisView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6c1c622a3ba644e4380cbf3e252ee460
+    m_Address: Assets/ToBundle/Prefabs/PetEntryView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8f0006192ddce7d4b80a6e401c091ddd
+    m_Address: Assets/ToBundle/Prefabs/MyPrefab.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 21a34d661c6b1f5429bfc15cd920e42e
+    m_Address: Assets/ToBundle/Prefabs/SettingView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0f728d266239ddb4c8a26b329c0e5a74, type: 2}
   m_SchemaSet:

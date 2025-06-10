@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Framework;
 using Scripts.Framework.Resource;
 using Scripts.Framework.UI;
 using UnityEngine;
