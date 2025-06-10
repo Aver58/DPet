@@ -1,8 +1,6 @@
-using AIMiniGame.Scripts.Bussiness.Model;
-using AIMiniGame.Scripts.Framework.UI;
-using UnityEngine;
+using Scripts.Framework.UI;
 
-namespace AIMiniGame.Scripts.Bussiness.Controller {
+namespace Scripts.Bussiness.Controller {
     public class SettingController : ControllerBase {
         public static string IsWindowsTopMost = "IsWindowsTopMost";
         public static string IsClickThrough = "isClickThrough";

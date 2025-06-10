@@ -44,8 +44,8 @@ public class AddViewTool : EditorWindow {
         }
 
         if (isGenerateController) {
-            // 1.Assets\AIMiniGame\Scripts\Bussiness\Controller 文件夹下新增文件 viewNameController.cs
-            var controllerPath = $"Assets/AIMiniGame/Scripts/Bussiness/Controller/{viewName}Controller.cs";
+            // 1.Assets\Scripts\Bussiness\Controller 文件夹下新增文件 viewNameController.cs
+            var controllerPath = $"Assets/Scripts/Bussiness/Controller/{viewName}Controller.cs";
             // 如果文件已存在，提示用户
             if (System.IO.File.Exists(controllerPath)) {
                 EditorUtility.DisplayDialog("错误", $"{viewName}Controller.cs 文件已存在，请更换名称", "确定");
@@ -59,15 +59,15 @@ public class AddViewTool : EditorWindow {
             }
 
             // 替换 ControllerTemplate.txt 的 #ClassName# 为 viewName
-            var templateFilePath = $"Assets/AIMiniGame/Scripts/Bussiness/Tool/AddViewTemplate/ControllerTemplate.txt";
+            var templateFilePath = $"Assets/Scripts/Bussiness/Tool/AddViewTemplate/ControllerTemplate.txt";
             var controllerTemplate = System.IO.File.ReadAllText(templateFilePath);
             controllerTemplate = controllerTemplate.Replace("#ClassName#", viewName);
             System.IO.File.WriteAllText(controllerPath, controllerTemplate);
         }
 
         if (isGenerateModel) {
-            // 2. Assets\AIMiniGame\Scripts\Bussiness\Model 文件夹下新增文件 viewNameModel.cs
-            var modelPath = $"Assets/AIMiniGame/Scripts/Bussiness/Model/{viewName}Model.cs";
+            // 2. Assets\Scripts\Bussiness\Model 文件夹下新增文件 viewNameModel.cs
+            var modelPath = $"Assets/Scripts/Bussiness/Model/{viewName}Model.cs";
             // 如果文件已存在，提示用户
             if (System.IO.File.Exists(modelPath)) {
                 EditorUtility.DisplayDialog("错误", $"{viewName}Model.cs 文件已存在，请更换名称", "确定");
@@ -79,15 +79,15 @@ public class AddViewTool : EditorWindow {
                 System.IO.Directory.CreateDirectory(modelDir);
             }
             // 替换 ModelTemplate.txt 的 #ClassName# 为 viewName
-            var modelTemplateFilePath = $"Assets/AIMiniGame/Scripts/Bussiness/Tool/AddViewTemplate/ModelTemplate.txt";
+            var modelTemplateFilePath = $"Assets/Scripts/Bussiness/Tool/AddViewTemplate/ModelTemplate.txt";
             var modelTemplate = System.IO.File.ReadAllText(modelTemplateFilePath);
             modelTemplate = modelTemplate.Replace("#ClassName#", viewName);
             System.IO.File.WriteAllText(modelPath, modelTemplate);
         }
 
         if (isGenerateView) {
-            // 3. Assets\AIMiniGame\Scripts\Bussiness\View 文件夹下新增文件 viewNameView.cs
-            var viewPath = $"Assets/AIMiniGame/Scripts/Bussiness/View/{viewName}View.cs";
+            // 3. Assets\Scripts\Bussiness\View 文件夹下新增文件 viewNameView.cs
+            var viewPath = $"Assets/Scripts/Bussiness/View/{viewName}View.cs";
             // 如果文件已存在，提示用户
             if (System.IO.File.Exists(viewPath)) {
                 EditorUtility.DisplayDialog("错误", $"{viewName}View.cs 文件已存在，请更换名称", "确定");
@@ -99,7 +99,7 @@ public class AddViewTool : EditorWindow {
                 System.IO.Directory.CreateDirectory(viewDir);
             }
             // 替换 ViewTemplate.txt 的 #ClassName# 为 viewName
-            var viewTemplateFilePath = $"Assets/AIMiniGame/Scripts/Bussiness/Tool/AddViewTemplate/ViewTemplate.txt";
+            var viewTemplateFilePath = $"Assets/Scripts/Bussiness/Tool/AddViewTemplate/ViewTemplate.txt";
             var viewTemplate = System.IO.File.ReadAllText(viewTemplateFilePath);
             viewTemplate = viewTemplate.Replace("#ClassName#", viewName);
             System.IO.File.WriteAllText(viewPath, viewTemplate);
@@ -107,7 +107,7 @@ public class AddViewTool : EditorWindow {
 
         if (isGenerateViewCsv) {
             // 4. UIViewDefine.csv 新增配置
-            var csvPath = $"Assets/AIMiniGame/ToBundle/Config/UIViewDefine.csv";
+            var csvPath = $"Assets/ToBundle/Config/UIViewDefine.csv";
             // 如果文件不存在，提示用户
             if (!System.IO.File.Exists(csvPath)) {
                 EditorUtility.DisplayDialog("错误", "UIViewDefine.csv 文件不存在，请检查", "确定");
@@ -129,7 +129,7 @@ public class AddViewTool : EditorWindow {
     private void GeneratePrefab(string viewName) {
         if (!string.IsNullOrEmpty(viewName)) {
             // 5. 新增预制
-            var prefabPath = $"Assets/AIMiniGame/ToBundle/Prefabs/{viewName}View.prefab";
+            var prefabPath = $"Assets/ToBundle/Prefabs/{viewName}View.prefab";
             // 如果文件已存在，提示用户
             if (System.IO.File.Exists(prefabPath)) {
                 EditorUtility.DisplayDialog("错误", $"{viewName}View.prefab 预制体已存在，请更换名称", "确定");

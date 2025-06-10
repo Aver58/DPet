@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace AIMiniGame.Scripts.Bussiness.GamePlay {
+namespace Scripts.Bussiness.GamePlay {
     // UI 移动组件，挂载在UI元素上，该对象就可以被拖动
     public class UIMoveObjMono : MonoBehaviour {
         private RectTransform rectTransform;

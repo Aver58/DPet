@@ -1,6 +1,6 @@
 using System;
 
-namespace AIMiniGame.Scripts.Framework.UI {
+namespace Scripts.Framework.UI {
     // Controller基类
     public abstract class ControllerBase {
         public bool IsClear { get; private set; } = false;

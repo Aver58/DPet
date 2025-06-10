@@ -1,9 +1,9 @@
 using UnityEngine;
 using Debug = UnityEngine.Debug;
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Framework.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using AIMiniGame.Scripts.Bussiness.Controller;
+using Scripts.Bussiness.Controller;
 using System;
 using Kirurobo;
 
@@ -53,7 +53,7 @@ public class PetView : UIViewBase {
     }
 
     private void InitMainPet() {
-        var petId = PlayerPrefs.GetInt(PetController.MainPetId, 0);
+        var petId = PlayerPrefs.GetInt(PetController.MainPetId, 1);
         var config = PetMapConfig.Get(petId.ToString());
         if (config == null) {
             Debug.LogError($"Pet config not found for id: {petId}");

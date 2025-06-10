@@ -1,2 +1,2 @@
-# MiniGame
-小游戏
+# Desktop Pet
+桌宠小游戏

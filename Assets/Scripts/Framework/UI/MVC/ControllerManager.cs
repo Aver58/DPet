@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Framework.UI;
 
 public class ControllerManager : Singleton<ControllerManager> {
     private List<ControllerBase> controllers = new ();

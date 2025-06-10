@@ -1,7 +1,6 @@
-using AIMiniGame.Scripts.Bussiness.Model;
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Framework.UI;
 
-namespace AIMiniGame.Scripts.Bussiness.Controller {
+namespace Scripts.Bussiness.Controller {
     public class PetController : ControllerBase {
         public static string MainPetId = "MainPetId";
         // public static string LeftPetId = "LeftPetId";

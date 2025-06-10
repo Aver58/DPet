@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AIMiniGame.Scripts.Framework.Resource {
+namespace Scripts.Framework.Resource {
     public interface IResourceLoader {
         void Initialize();
         void LoadAssetAsync<T>(string key, System.Action<T> onComplete) where T : Object;

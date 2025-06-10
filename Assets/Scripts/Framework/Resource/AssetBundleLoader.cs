@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AIMiniGame.Scripts.Framework.Resource {
+namespace Scripts.Framework.Resource {
     public class AssetBundleLoader : IResourceLoader {
         private ResourceConfig m_resourceConfig;
         private Dictionary<string, AssetBundle> m_loadedBundles = new Dictionary<string, AssetBundle>();

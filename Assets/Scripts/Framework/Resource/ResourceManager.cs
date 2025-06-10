@@ -1,4 +1,4 @@
-using AIMiniGame.Scripts.Framework.Resource;
+using Scripts.Framework.Resource;
 public class ResourceManager : Singleton<ResourceManager> {
     private IResourceLoader m_loader;
     private ResourceCache m_cache = new ResourceCache();

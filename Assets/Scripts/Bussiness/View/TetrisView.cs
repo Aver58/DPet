@@ -1,11 +1,11 @@
 using System.Collections.Generic;
-using AIMiniGame.Scripts.Bussiness.Controller;
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Bussiness.Controller;
+using Scripts.Framework.UI;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AIMiniGame.Scripts.TetrisGame {
+namespace Scripts.TetrisGame {
     public class TetrisView : UIViewBase {
         [SerializeField] private GridLayoutGroup gameboardGrid;
         [SerializeField] private GridLayoutGroup nextTetrominoGrid;

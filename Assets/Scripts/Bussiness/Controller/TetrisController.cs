@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
-using AIMiniGame.Scripts.Framework.UI;
-using AIMiniGame.Scripts.TetrisGame;
+using Scripts.Framework.UI;
+using Scripts.TetrisGame;
 
-namespace AIMiniGame.Scripts.Bussiness.Controller {
+namespace Scripts.Bussiness.Controller {
     public class TetrisController : ControllerBase {
         public TetrisModel TetrisModel { get; private set; }
         private float _fallTime;

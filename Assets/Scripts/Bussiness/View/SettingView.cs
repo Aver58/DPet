@@ -1,5 +1,5 @@
-using AIMiniGame.Scripts.Bussiness.Controller;
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Bussiness.Controller;
+using Scripts.Framework.UI;
 
 using Kirurobo;
 

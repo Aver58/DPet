@@ -7,8 +7,8 @@ using UnityEngine.AddressableAssets;
 
 public class ConfigManager {
     private static ConfigManager instance;
-    private static string classDirectoryPath = Application.dataPath + @"\AIMiniGame\Scripts\Framework\Resource\Config\GeneratedConfigs\";
-    private static string configDirectoryPath = "Assets/AIMiniGame/ToBundle/Config/";
+    private static string classDirectoryPath = Application.dataPath + @"\Scripts\Framework\Resource\Config\GeneratedConfigs\";
+    private static string configDirectoryPath = "Assets/ToBundle/Config/";
 
     public static ConfigManager Instance {
         get {

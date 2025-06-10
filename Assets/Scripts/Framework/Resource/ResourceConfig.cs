@@ -1,8 +1,7 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace AIMiniGame.Scripts.Framework.Resource {
-    [CreateAssetMenu(fileName = "ResourceConfig", menuName = "AIMiniGame/ResourceConfig")]
+namespace Scripts.Framework.Resource {
+    [CreateAssetMenu(fileName = "ResourceConfig", menuName = "ResourceConfig")]
     public class ResourceConfig : ScriptableObject {
         public enum LoadModeEnum {
             Addressables,

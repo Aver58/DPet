@@ -1,6 +1,6 @@
 using System.Collections.Generic;
-using AIMiniGame.Scripts.Framework.Resource;
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Framework.Resource;
+using Scripts.Framework.UI;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 

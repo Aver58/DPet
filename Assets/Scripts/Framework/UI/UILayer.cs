@@ -1,6 +1,6 @@
 using System;
 
-namespace AIMiniGame.Scripts.Framework.UI {
+namespace Scripts.Framework.UI {
     [Serializable]
     public enum UILayer {
         Background = 0,   // 底层UI（如场景背景）

@@ -1,8 +1,7 @@
-using System.Collections.Generic;
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Framework.UI;
 using UnityEngine;
 
-namespace AIMiniGame.Scripts.TetrisGame {
+namespace Scripts.TetrisGame {
     public class TetrisModel : ModelBase {
         private readonly int _rows = 20;
         private readonly int _cols = 10;

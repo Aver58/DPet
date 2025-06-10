@@ -17,24 +17,56 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: a26943426306d7b42900b85adb02fd2f
   m_SerializeEntries:
-  - m_GUID: 8f0006192ddce7d4b80a6e401c091ddd
-    m_Address: Assets/AIMiniGame/ToBundle/Prefabs/MyPrefab.prefab
+  - m_GUID: 21a34d661c6b1f5429bfc15cd920e42e
+    m_Address: Assets/ToBundle/Prefabs/SettingView.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 5ea27fee66484590ab20bd6d04975440
-    m_Address: Assets/AIMiniGame/ToBundle/Config/Localization/Chinese/Language.csv
+    m_Address: Assets/ToBundle/Config/Localization/Chinese/Language.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: edc45afaa5f546c48d2cd5198256a1f3
     m_Address: Assets/AIMiniGame/ToBundle/Config/Localization/English/Language.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 21a34d661c6b1f5429bfc15cd920e42e
-    m_Address: Assets/AIMiniGame/ToBundle/Prefabs/SettingView.prefab
+  - m_GUID: c17de57489c89564b917b9bd8c2c2819
+    m_Address: Assets/ToBundle/Prefabs/TestView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5fd21c4ecbc30b64393676672c6a6093
+    m_Address: Assets/ToBundle/Prefabs/PetView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bd4b914c32884292afa3099a34853255
+    m_Address: Assets/ToBundle/Config/InputAward.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9e310ea1a82448e3a26362ba42bc0f58
+    m_Address: Assets/ToBundle/Config/GiftTable.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: de54d9b4ce824b4eb89fcba3f82d9f0b
+    m_Address: Assets/ToBundle/Config/PetMap.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ff67c1684bec4364b8aec28ee593df6c
+    m_Address: Assets/ToBundle/Config/TestFile.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 96007cd47c6654348af6f492b49ff461
+    m_Address: Assets/ToBundle/Prefabs/TestFolder/TestView2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aafdebb77d1d01749bf87bdddbe76e63
+    m_Address: Assets/ToBundle/Prefabs/TetrisView.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 6c1c622a3ba644e4380cbf3e252ee460
-    m_Address: Assets/AIMiniGame/ToBundle/Prefabs/PetEntryView.prefab
+    m_Address: Assets/ToBundle/Prefabs/PetEntryView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8f0006192ddce7d4b80a6e401c091ddd
+    m_Address: Assets/ToBundle/Prefabs/MyPrefab.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

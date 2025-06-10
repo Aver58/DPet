@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AIMiniGame.Scripts.Framework.UI {
+namespace Scripts.Framework.UI {
     public abstract class UIViewBase : MonoBehaviour {
         protected ControllerBase Controller;
         public UILayer Layer = UILayer.Normal;// 所属层级

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AIMiniGame.Scripts.Framework.Resource {
+namespace Scripts.Framework.Resource {
     public class ResourceCache {
         private Dictionary<string, Object> m_cache = new Dictionary<string, Object>();
 

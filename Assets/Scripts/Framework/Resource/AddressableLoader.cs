@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
-namespace AIMiniGame.Scripts.Framework.Resource {
+namespace Scripts.Framework.Resource {
     public class AddressableLoader : IResourceLoader {
         public void Initialize() {
             Addressables.InitializeAsync();

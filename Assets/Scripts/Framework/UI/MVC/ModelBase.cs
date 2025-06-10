@@ -1,7 +1,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace AIMiniGame.Scripts.Framework.UI {
+namespace Scripts.Framework.UI {
     // Model基类（实现属性变更通知）
     public abstract class ModelBase : INotifyPropertyChanged {
         public event PropertyChangedEventHandler PropertyChanged;

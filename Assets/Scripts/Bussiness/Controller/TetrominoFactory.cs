@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AIMiniGame.Scripts.TetrisGame {
+namespace Scripts.TetrisGame {
     public static class TetrominoFactory {
         // 方块形状定义
         private static readonly Dictionary<int, int[,]> TetrominoShapes = new Dictionary<int, int[,]> {

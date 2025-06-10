@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AIMiniGame.Scripts.Framework.UI {
+namespace Scripts.Framework.UI {
     public class UILayerController {
         // 不同层级的Canvas排序设置
         public static void SetLayerOrder(Transform uiTransform, UILayer layer) {

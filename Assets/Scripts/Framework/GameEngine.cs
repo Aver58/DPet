@@ -1,11 +1,11 @@
-using AIMiniGame.Scripts.Bussiness.Controller;
-using AIMiniGame.Scripts.TetrisGame;
+using Scripts.Bussiness.Controller;
+using Scripts.TetrisGame;
 using UnityEngine;
 
 public class GameEngine : MonoBehaviour {
     private void Start() {
         // 加载资源示例
-        // ResourceManager.Instance.LoadAssetAsync<GameObject>("Assets/AIMiniGame/ToBundle/Prefabs/MyPrefab.prefab", obj => {
+        // ResourceManager.Instance.LoadAssetAsync<GameObject>("Assets/ToBundle/Prefabs/MyPrefab.prefab", obj => {
         //     if (obj != null) {
         //         var go = Instantiate(obj);
         //         go.transform.localPosition = Vector3.zero;
@@ -13,7 +13,7 @@ public class GameEngine : MonoBehaviour {
         // });
 
         // 卸载资源示例
-        // ResourceManager.Instance.UnloadAsset("Assets/AIMiniGame/ToBundle/Prefabs/MyPrefab.prefab");
+        // ResourceManager.Instance.UnloadAsset("Assets/ToBundle/Prefabs/MyPrefab.prefab");
 
         // 注册事件示例
         // EventManager.Instance.Register<string>(EventConstantId.OnTestEvent, OnTestEvent);

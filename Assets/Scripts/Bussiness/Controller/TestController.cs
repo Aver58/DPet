@@ -1,8 +1,8 @@
-using AIMiniGame.Scripts.Bussiness.Model;
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Bussiness.Model;
+using Scripts.Framework.UI;
 using UnityEngine;
 
-namespace AIMiniGame.Scripts.Bussiness.Controller {
+namespace Scripts.Bussiness.Controller {
     public class TestController : ControllerBase {
         public TestViewModel Model { get; private set; }
 

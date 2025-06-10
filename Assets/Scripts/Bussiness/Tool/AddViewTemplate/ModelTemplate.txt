@@ -1,6 +1,6 @@
-using AIMiniGame.Scripts.Framework.UI;
+using Scripts.Framework.UI;
 
-namespace AIMiniGame.Scripts.Bussiness.Model {
+namespace Scripts.Bussiness.Model {
     public class #ClassName#Model : ModelBase {
         private int _health;
         public int Health {
