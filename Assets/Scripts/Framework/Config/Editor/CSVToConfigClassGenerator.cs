@@ -48,7 +48,6 @@ public class CSVToConfigClassGenerator : Editor {
         sb.AppendLine();
         sb.AppendLine("[System.Serializable]");
         sb.AppendLine($"public class {className} : BaseConfig {{");
-
         for (int i = 0; i < headers.Length; i++) {
             string fieldName = ToCamelCase(headers[i]);
             string fieldType = types[i];
@@ -60,7 +59,6 @@ public class CSVToConfigClassGenerator : Editor {
         sb.AppendLine("        for (int i = 0; i < headers.Length; i++) {");
         sb.AppendLine("            var header = headers[i].Replace(\"\\r\", \"\");");
         sb.AppendLine("            switch (header) {");
-
         for (int i = 0; i < headers.Length; i++) {
             string fieldName = ToCamelCase(headers[i]);
             string fieldType = types[i];
@@ -68,12 +66,12 @@ public class CSVToConfigClassGenerator : Editor {
             if (fieldType.EndsWith("[]")) {
                 string elementType = fieldType.Substring(0, fieldType.Length - 2);
                 if (elementType == "string") {
-                    sb.AppendLine($"                    {fieldName} = values[i].Split(';');");
+                    sb.AppendLine($"                    {fieldName} = values[i].Trim().Split(';',StringSplitOptions.RemoveEmptyEntries);");
                 } else {
                     sb.AppendLine($"                    {fieldName} = Array.ConvertAll(values[i].Split(';'), {elementType}.Parse);");
                 }
             } else if (fieldType == "string") {
-                sb.AppendLine($"                    {fieldName} = values[i];");
+                sb.AppendLine($"                    {fieldName} = values[i].Trim();");
             } else {
                 sb.AppendLine($"                    {fieldName} = {fieldType}.Parse(values[i]);");
             }
@@ -93,6 +91,11 @@ public class CSVToConfigClassGenerator : Editor {
         sb.AppendLine($"        {className} config = null;");
         sb.AppendLine("        if (cachedConfigs != null) {");
         sb.AppendLine("            cachedConfigs.TryGetValue(key, out config);");
+        sb.AppendLine("        }");
+        sb.AppendLine();
+        sb.AppendLine("        if (config == null) {");
+        sb.AppendLine($"            UnityEngine.Debug.LogError(\"{className}.csv not fount key : \" + key);");
+        sb.AppendLine("            return null;");
         sb.AppendLine("        }");
         sb.AppendLine();
         sb.AppendLine("        return config;");

@@ -4,7 +4,7 @@ using Scripts.Framework.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Scripts.Bussiness.Controller;
-using System;
+
 using Kirurobo;
 
 public class PetView : UIViewBase {
@@ -50,6 +50,9 @@ public class PetView : UIViewBase {
 
         InitSetting();
         InitMainPet();
+        GlobalKeyHook.Instance.OnKeyPressed += (keyDownCount) => {
+            InputCount++;
+        };
     }
 
     private void InitMainPet() {
@@ -59,8 +62,8 @@ public class PetView : UIViewBase {
             Debug.LogError($"Pet config not found for id: {petId}");
             return;
         }
-        var petSprite = config.petSprites[0];
-        // ImgMain.SetSprite(petSprite);
+        var petSprite = config.sprites[0];
+        ImgMain.SetSprite(petSprite);
     }
 
     private void InitSetting() {
@@ -91,18 +94,18 @@ public class PetView : UIViewBase {
 
     private void Update() {
         // 检测滚轮滚动
-        var scroll = Input.GetAxis("Mouse ScrollWheel");
-        if (scroll != 0) {
-            scrollValue += scroll;
-            if (scrollValue > 1) {
-                InputCount++;
-                scrollValue = 0f;
-            }
-        }
-
-        if (Input.anyKeyDown) {
-            InputCount++;
-        }
+        // var scroll = Input.GetAxis("Mouse ScrollWheel");
+        // if (scroll != 0) {
+        //     scrollValue += scroll;
+        //     if (scrollValue > 1) {
+        //         InputCount++;
+        //         scrollValue = 0f;
+        //     }
+        // }
+        //
+        // if (Input.anyKeyDown) {
+        //     InputCount++;
+        // }
     }
 
     protected override void UpdateView() {

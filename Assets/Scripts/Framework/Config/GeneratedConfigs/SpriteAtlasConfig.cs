@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class PetMapConfig : BaseConfig {
+public class SpriteAtlasConfig : BaseConfig {
     public int id;
-    public string[] sprites;
+    public string name;
 
     public override void Parse(string[] values, string[] headers) {
         for (int i = 0; i < headers.Length; i++) {
@@ -13,26 +13,26 @@ public class PetMapConfig : BaseConfig {
                 case "id":
                     id = int.Parse(values[i]);
                     break;
-                case "sprites":
-                    sprites = values[i].Trim().Split(';',StringSplitOptions.RemoveEmptyEntries);
+                case "Name":
+                    name = values[i].Trim();
                     break;
             }
         }
     }
 
-    private static Dictionary<string, PetMapConfig> cachedConfigs;
-    public static PetMapConfig Get(string key) {
+    private static Dictionary<string, SpriteAtlasConfig> cachedConfigs;
+    public static SpriteAtlasConfig Get(string key) {
         if (cachedConfigs == null) {
-            cachedConfigs = ConfigManager.Instance.LoadConfig<PetMapConfig>("PetMap.csv");
+            cachedConfigs = ConfigManager.Instance.LoadConfig<SpriteAtlasConfig>("SpriteAtlas.csv");
         }
 
-        PetMapConfig config = null;
+        SpriteAtlasConfig config = null;
         if (cachedConfigs != null) {
             cachedConfigs.TryGetValue(key, out config);
         }
 
         if (config == null) {
-            UnityEngine.Debug.LogError("PetMapConfig.csv not fount key : " + key);
+            UnityEngine.Debug.LogError("SpriteAtlasConfig.csv not fount key : " + key);
             return null;
         }
 
@@ -41,7 +41,7 @@ public class PetMapConfig : BaseConfig {
 
     public static List<string> GetKeys() {
         if (cachedConfigs == null) {
-            cachedConfigs = ConfigManager.Instance.LoadConfig<PetMapConfig>("PetMap.csv");
+            cachedConfigs = ConfigManager.Instance.LoadConfig<SpriteAtlasConfig>("SpriteAtlas.csv");
         }
 
         return cachedConfigs != null ? new List<string>(cachedConfigs.Keys) : new List<string>();

@@ -1,11 +1,9 @@
 public class GameWorld {
-    private int worldId;
     private string warId;
     private bool isDispose;
     private GameWorldFeatures baseFeatures;
 
     public GameWorld() {
-        worldId = -1;
         warId = string.Empty;
     }
 

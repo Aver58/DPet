@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Vpet
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 153c775c41a40964cb2bcd1cb91739c2, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: dc656782f9e548042b4f395aad18a78b, type: 3}
+  - {fileID: 21300000, guid: a7ed6783adafb064c82a40d83bd42239, type: 3}
+  - {fileID: 21300000, guid: 301f1a46ed9bb9c409b29f7c73a25676, type: 3}
+  - {fileID: 21300000, guid: f6755f4770dceb14fac8005d3b8c981a, type: 3}
+  - {fileID: 21300000, guid: 3e440bb7db50bdd43970d490c333bfe1, type: 3}
+  - {fileID: 21300000, guid: a5444479599da9f43b8c990743f411e7, type: 3}
+  - {fileID: 21300000, guid: 8bc2187a6e1bdaf4ea95e72fc5c49ef0, type: 3}
+  - {fileID: 21300000, guid: 7740270cec948494fb50cfe591cc36ff, type: 3}
+  - {fileID: 21300000, guid: 96ef064d70ec2ed41a7141092fdfe375, type: 3}
+  - {fileID: 21300000, guid: 38a72ebd6d3be39428ffd4dcd55d3da0, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_007_125"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_002_125"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_008_125"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_005_125"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_006_250"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_004_125"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_000_250"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_009_250"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_001_125"
+  - "\u54C8\u76AE\u5411\u5DE6\u722C\u884C_003_250"
+  m_RenderDataMap: {}
+  m_Tag: Vpet
+  m_IsVariant: 0

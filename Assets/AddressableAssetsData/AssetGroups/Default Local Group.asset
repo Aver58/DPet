@@ -21,6 +21,14 @@ MonoBehaviour:
     m_Address: Assets/ToBundle/Atlas/Pet.spriteatlas
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 50ae375b21ff4c5e8e6c6726d89cf2b7
+    m_Address: Assets/ToBundle/Config/SpriteAtlas.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2fbac5cacf834c35b8322f2137b6c9cf
+    m_Address: Assets/ToBundle/Config/Sprite.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0f728d266239ddb4c8a26b329c0e5a74, type: 2}
   m_SchemaSet:

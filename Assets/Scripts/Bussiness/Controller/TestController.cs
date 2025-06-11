@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Scripts.Bussiness.Controller {
     public class TestController : ControllerBase {
-        public TestViewModel Model { get; private set; }
+        public new TestViewModel Model { get; private set; }
 
         public TestController() {
             Model = new TestViewModel { Health = 100 };
