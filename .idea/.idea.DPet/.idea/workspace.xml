@@ -5,16 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac315b8e-85b5-474d-bdc8-75d48d4feda3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Tool/Editor/CollectAssets.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/link.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Controller/TestController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Controller/TestController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Controller/TetrominoFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/GamePlay/UIMoveObjMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/GamePlay/UIMoveObjMono.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Test/TestPrefab.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/PetView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/PetView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Framework/Base/GameWorld.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Framework/Base/GameWorld.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Framework/Config/Editor/CSVToConfigClassGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Framework/Config/Editor/CSVToConfigClassGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Framework/Config/GeneratedConfigs/PetMapConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Framework/Config/GeneratedConfigs/PetMapConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Framework/LoadManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Framework/LoadManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Framework/UI/ImageExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Framework/UI/ImageExtension.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/TestView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/TestView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/TetrisView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/TetrisView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ToBundle/Config/GiftTable.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ToBundle/Config/GiftTable.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ToBundle/Config/InputAward.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ToBundle/Config/InputAward.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ToBundle/Prefabs/PetView.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ToBundle/Prefabs/PetView.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +73,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Build\DPert.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="F:\DPet\Build" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity 2021.3.33f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath F:\DPet -debugCodeOptimization" />
@@ -116,6 +128,7 @@
       <updated>1749526679111</updated>
       <workItem from="1749526680541" duration="4302000" />
       <workItem from="1749570466072" duration="6918000" />
+      <workItem from="1749707493874" duration="11528000" />
     </task>
     <servers />
   </component>
@@ -126,50 +139,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Framework/UI/ImageExtension.cs</url>
-          <line>41</line>
-          <properties documentPath="F:\DPet\Assets\Scripts\Framework\UI\ImageExtension.cs" initialLine="41" containingFunctionPresentation="Lambda expression inside Method 'SetSprite'">
-            <startOffsets>
-              <option value="1590" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1692" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Framework/UI/ImageExtension.cs</url>
-          <line>39</line>
-          <properties documentPath="F:\DPet\Assets\Scripts\Framework\UI\ImageExtension.cs" initialLine="39" containingFunctionPresentation="Method 'SetSprite'">
-            <startOffsets>
-              <option value="1462" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1526" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Framework/UI/ImageExtension.cs</url>
-          <line>14</line>
-          <properties documentPath="F:\DPet\Assets\Scripts\Framework\UI\ImageExtension.cs" initialLine="14" containingFunctionPresentation="Method 'SetSprite'">
-            <startOffsets>
-              <option value="615" />
-            </startOffsets>
-            <endOffsets>
-              <option value="633" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

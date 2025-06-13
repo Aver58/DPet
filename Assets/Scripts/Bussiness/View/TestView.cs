@@ -1,12 +1,11 @@
 using Scripts.Bussiness.Controller;
 using Scripts.Framework.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TestView : UIViewBase {
     [SerializeField] private Button _testBtn;
-    [SerializeField] private TextMeshProUGUI _testText;
+    [SerializeField] private Text _testText;
 
     protected override void OnInit() {
         _testBtn.onClick.AddListener(OnTakeDamageButtonClick);

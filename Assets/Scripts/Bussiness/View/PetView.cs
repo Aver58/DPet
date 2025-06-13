@@ -6,16 +6,16 @@ using UnityEngine.UI;
 using Scripts.Bussiness.Controller;
 
 using Kirurobo;
+using Scripts.Bussiness.GamePlay;
 
 public class PetView : UIViewBase {
     public Image ImgMain;
     public Image ImgLeft;
     public Image ImgRight;
     public Image ImgHead;
-    public EventTrigger moveObj;
+    public UIMoveObjMono uiMoveObjMono;
     public Text TxtInputCount;
 
-    private RectTransform rectTransform;
     private int inputCount = 0;
     private PetController petController;
     private float scrollValue = 0f;
@@ -26,37 +26,28 @@ public class PetView : UIViewBase {
             return inputCount;
         } set {
             inputCount = value;
-            TxtInputCount.text = inputCount.ToString();
+            OnInputCountChange();
         }
     }
 
+    private void OnInputCountChange() {
+        TxtInputCount.text = inputCount.ToString();
+
+    }
+
     protected override void OnInit() {
-        if (moveObj == null) {
-            return;
-        }
-
-        rectTransform = moveObj.GetComponent<RectTransform>();
         petController = Controller as PetController;
-
-        var entry = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.PointerDown;
-        entry.callback.AddListener((data) => { OnPointerDown((PointerEventData)data); });
-        moveObj.triggers.Add(entry);
-
-        var entry1 = new EventTrigger.Entry();
-        entry1.eventID = EventTriggerType.PointerUp;
-        entry1.callback.AddListener((data) => { OnPointerUp((PointerEventData)data); });
-        moveObj.triggers.Add(entry1);
-
         InitSetting();
         InitMainPet();
         GlobalKeyHook.Instance.OnKeyPressed += (keyDownCount) => {
             InputCount++;
         };
+
+        uiMoveObjMono.OnPointerDownAction = OnPointerDown;
     }
 
     private void InitMainPet() {
-        var petId = PlayerPrefs.GetInt(PetController.MainPetId, 1);
+        var petId = PlayerPrefs.GetInt(PlayerPrefManager.MainPetId, 1);
         var config = PetMapConfig.Get(petId.ToString());
         if (config == null) {
             Debug.LogError($"Pet config not found for id: {petId}");
@@ -68,8 +59,8 @@ public class PetView : UIViewBase {
 
     private void InitSetting() {
         uniWindowController = UniWindowController.current;
-        uniWindowController.isTopmost = PlayerPrefs.GetInt(SettingController.IsWindowsTopMost, 0) == 1;
-        uniWindowController.isClickThrough = PlayerPrefs.GetInt(SettingController.IsClickThrough, 0) == 1;
+        uniWindowController.isTopmost = PlayerPrefs.GetInt(PlayerPrefManager.IsWindowsTopMost, 0) == 1;
+        uniWindowController.isClickThrough = PlayerPrefs.GetInt(PlayerPrefManager.IsClickThrough, 0) == 1;
         uniWindowController.isTransparent = true;
         uniWindowController.alphaValue = 1;
     }
@@ -87,30 +78,5 @@ public class PetView : UIViewBase {
         if (pointerEventData.button == PointerEventData.InputButton.Left){
             ControllerManager.Instance.Close<SettingController>();
         }
-    }
-
-    private void OnPointerUp(PointerEventData eventData) {
-    }
-
-    private void Update() {
-        // 检测滚轮滚动
-        // var scroll = Input.GetAxis("Mouse ScrollWheel");
-        // if (scroll != 0) {
-        //     scrollValue += scroll;
-        //     if (scrollValue > 1) {
-        //         InputCount++;
-        //         scrollValue = 0f;
-        //     }
-        // }
-        //
-        // if (Input.anyKeyDown) {
-        //     InputCount++;
-        // }
-    }
-
-    protected override void UpdateView() {
-        // if (Controller is TestViewController testViewController) {
-        //     _testText.text = $"Health: {testViewController.Model.Health}";
-        // }
     }
 }

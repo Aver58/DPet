@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Scripts.Bussiness.Controller;
 using Scripts.Framework.UI;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +8,9 @@ namespace Scripts.TetrisGame {
     public class TetrisView : UIViewBase {
         [SerializeField] private GridLayoutGroup gameboardGrid;
         [SerializeField] private GridLayoutGroup nextTetrominoGrid;
-        [SerializeField] private TextMeshProUGUI scoreText;
-        [SerializeField] private TextMeshProUGUI levelText;
-        [SerializeField] private TextMeshProUGUI linesClearedText;
+        [SerializeField] private Text scoreText;
+        [SerializeField] private Text levelText;
+        [SerializeField] private Text linesClearedText;
         [SerializeField] private GameObject gameOverPanel;
         [SerializeField] private Button leftButton;
         [SerializeField] private Button rightButton;

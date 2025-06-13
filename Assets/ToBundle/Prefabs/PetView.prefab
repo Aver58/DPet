@@ -239,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
   m_OnCullStateChanged:
@@ -546,13 +546,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 916a57f8571f57e49b9993627e23b324, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -786,7 +786,7 @@ MonoBehaviour:
   ImgLeft: {fileID: 1911421745733430813}
   ImgRight: {fileID: 5097367946238471758}
   ImgHead: {fileID: 1358460924109493898}
-  moveObj: {fileID: 1703533510566395552}
+  uiMoveObjMono: {fileID: 8394787794794668492}
   TxtInputCount: {fileID: 3873034250284240045}
 --- !u!1 &7857024642962122648
 GameObject:
@@ -878,9 +878,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7832358260917278927}
   - component: {fileID: 1843972235}
-  - component: {fileID: 3316915618844399702}
+  - component: {fileID: 8394787794794668492}
   m_Layer: 0
-  m_Name: MoveObj
+  m_Name: UIMoveObjMono
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -919,7 +919,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8790210211641572977}
   m_CullTransparentMesh: 1
---- !u!114 &3316915618844399702
+--- !u!114 &8394787794794668492
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
