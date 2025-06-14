@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class InputAwardConfig : BaseConfig {
+public class GiftTableConfig : BaseConfig {
     public int id;
-    public int giftId;
+    public int[] petPool;
 
     public override void Parse(string[] values, string[] headers) {
         for (int i = 0; i < headers.Length; i++) {
@@ -13,26 +13,26 @@ public class InputAwardConfig : BaseConfig {
                 case "id":
                     id = int.Parse(values[i]);
                     break;
-                case "giftId":
-                    giftId = int.Parse(values[i]);
+                case "petPool":
+                    petPool = Array.ConvertAll(values[i].Split(';'), int.Parse);
                     break;
             }
         }
     }
 
-    private static Dictionary<string, InputAwardConfig> cachedConfigs;
-    public static InputAwardConfig Get(string key) {
+    private static Dictionary<string, GiftTableConfig> cachedConfigs;
+    public static GiftTableConfig Get(string key) {
         if (cachedConfigs == null) {
-            cachedConfigs = ConfigManager.Instance.LoadConfig<InputAwardConfig>("InputAward.csv");
+            cachedConfigs = ConfigManager.Instance.LoadConfig<GiftTableConfig>("GiftTable.csv");
         }
 
-        InputAwardConfig config = null;
+        GiftTableConfig config = null;
         if (cachedConfigs != null) {
             cachedConfigs.TryGetValue(key, out config);
         }
 
         if (config == null) {
-            UnityEngine.Debug.LogError("InputAwardConfig.csv not fount key : " + key);
+            UnityEngine.Debug.LogError("GiftTableConfig.csv not fount key : " + key);
             return null;
         }
 
@@ -41,7 +41,7 @@ public class InputAwardConfig : BaseConfig {
 
     public static List<string> GetKeys() {
         if (cachedConfigs == null) {
-            cachedConfigs = ConfigManager.Instance.LoadConfig<InputAwardConfig>("InputAward.csv");
+            cachedConfigs = ConfigManager.Instance.LoadConfig<GiftTableConfig>("GiftTable.csv");
         }
 
         return cachedConfigs != null ? new List<string>(cachedConfigs.Keys) : new List<string>();

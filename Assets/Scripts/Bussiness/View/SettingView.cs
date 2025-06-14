@@ -15,9 +15,9 @@ public class SettingView : UIViewBase{
     private UniWindowController uniWindowController;
     
     protected override void OnInit() {
-        isWindowsTop.isOn = PlayerPrefs.GetInt(PlayerPrefManager.IsWindowsTopMost, 0) == 1;
+        isWindowsTop.isOn = PlayerPrefs.GetInt(PlayerPrefsManager.IsWindowsTopMost, 0) == 1;
         isWindowsTop.onValueChanged.AddListener(OnToggleIsTopChanged);
-        isClickThrough.isOn = PlayerPrefs.GetInt(PlayerPrefManager.IsClickThrough, 0) == 1;
+        isClickThrough.isOn = PlayerPrefs.GetInt(PlayerPrefsManager.IsClickThrough, 0) == 1;
         isClickThrough.onValueChanged.AddListener(OnToggleClickThroughChanged);
 
         languageDropdown.captionText.text = LocalizationFeature.GetLanguageName(LocalizationFeature.CurrentLanguage);
@@ -40,12 +40,12 @@ public class SettingView : UIViewBase{
     // 显示在其他应用上
     private void OnToggleIsTopChanged(bool isOn) {
         uniWindowController.isTopmost = isOn;
-        PlayerPrefs.SetInt(PlayerPrefManager.IsWindowsTopMost, isOn ? 1 : 0);
+        PlayerPrefs.SetInt(PlayerPrefsManager.IsWindowsTopMost, isOn ? 1 : 0);
     }
 
     private void OnToggleClickThroughChanged(bool isOn) {
         uniWindowController.isClickThrough = isOn;
-        PlayerPrefs.SetInt(PlayerPrefManager.IsClickThrough, isOn ? 1 : 0);
+        PlayerPrefs.SetInt(PlayerPrefsManager.IsClickThrough, isOn ? 1 : 0);
     }
 
     private void OnLanguageChanged(int index) {
