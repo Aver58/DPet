@@ -19,7 +19,7 @@ namespace Scripts.Bussiness.Controller {
         }
 
         private int giftCount = 0;
-        private Dictionary<GiftType,int> giftCountMap = new Dictionary<GiftType, int>(5){ };
+        private Dictionary<int,int> giftCountMap = new Dictionary<int, int>(5){ };
 
         public PetController() {
             InitInputRewardMap();
@@ -30,9 +30,9 @@ namespace Scripts.Bussiness.Controller {
             var keys = GiftTableConfig.GetKeys();
             for (int i = 0; i < keys.Count; i++) {
                 var key = keys[i];
-                if (Enum.TryParse(key, out GiftType giftType)) {
+                if (int.TryParse(key, out int giftId)) {
                     // todo 获取缓存
-                    giftCountMap[giftType] = 0;
+                    giftCountMap[giftId] = 0;
                 } else {
                     Debug.LogError($"Invalid GiftType: {key}");
                 }
@@ -43,8 +43,8 @@ namespace Scripts.Bussiness.Controller {
             var keys = InputRewardConfig.GetKeys();
             for (int i = 0; i < keys.Count; i++) {
                 var key = keys[i];
-                var inputCount = int.Parse(key);
-                getRewardInputCountList.Add(inputCount);
+                var count = int.Parse(key);
+                getRewardInputCountList.Add(count);
             }
         }
 
@@ -56,8 +56,8 @@ namespace Scripts.Bussiness.Controller {
                     var config = InputRewardConfig.Get(getRewardInputCount.ToString());
                     if (config != null) {
                         var giftId = config.giftId;
-                        GetInputReward(giftId);
                         giftCount++;
+                        giftCountMap[giftId]++;
                     } else {
                         Debug.LogError($"InputRewardConfig not found for input count: {getRewardInputCount}");
                     }
@@ -65,6 +65,16 @@ namespace Scripts.Bussiness.Controller {
             }
         }
 
+        public void GetAllReward() {
+            foreach (var keyValuePair in giftCountMap) {
+                var giftId = keyValuePair.Key;
+                var count = keyValuePair.Value;
+                for (int i = 0; i < count; i++) {
+                    GetInputReward(giftId);
+                }
+            }
+        }
+        
         private void GetInputReward(int giftId) {
             var config = GiftTableConfig.Get(giftId.ToString());
             if (config == null) {
@@ -76,7 +86,6 @@ namespace Scripts.Bussiness.Controller {
             if (petPool.Length > 0) {
                 var randomIndex = UnityEngine.Random.Range(0, petPool.Length);
                 var petId = petPool[randomIndex];
-                // PlayerPrefs.SetInt(PlayerPrefsManager.MainPetId, petId);
                 Debug.Log($"获得新宠物: {petId}");
             } else {
                 Debug.LogWarning($"No pets available in the pool for giftId: {giftId}");

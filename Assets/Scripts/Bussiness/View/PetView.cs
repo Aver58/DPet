@@ -16,6 +16,7 @@ public class PetView : UIViewBase {
     public Image ImgHead;
     public UIMoveObjMono uiMoveObjMono;
     public Text TxtInputCount;
+    public Button BtnChest;
 
     private PetController petController;
     private float scrollValue = 0f;
@@ -30,6 +31,7 @@ public class PetView : UIViewBase {
         petController.OnInputCountChange += OnInputCountChange;
         uiMoveObjMono.OnPointerDownAction = OnPointerDown;
         GlobalKeyHook.Instance.OnKeyPressed += (keyDownCount) => { petController.InputCount++; };
+        BtnChest.onClick.AddListener(OnBtnChest);
         InitSetting();
         InitMainPet();
     }
@@ -71,5 +73,9 @@ public class PetView : UIViewBase {
 
     private void OnInputCountChange(int value) {
         TxtInputCount.text = petController.InputCount.ToString();
+    }
+    
+    private void OnBtnChest() {
+        
     }
 }

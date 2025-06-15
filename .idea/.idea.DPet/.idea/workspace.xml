@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac315b8e-85b5-474d-bdc8-75d48d4feda3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DPet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DPet/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Controller/PetController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Controller/PetController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/GamePlay/PlayerPrefManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/GamePlay/PlayerPrefsManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/PetView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/PetView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/SettingView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/SettingView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Framework/Config/GeneratedConfigs/InputAwardConfig.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ToBundle/Config/InputAward.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ToBundle/Config/InputReward.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +22,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53aac14d88ba4477acc998b039cfd73a15ae00/18/66a4fa79/SpriteAtlas.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.19.19/Runtime/Addressables.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -47,6 +44,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -61,9 +59,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\ZZW\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\ZZW\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\ZZW\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\Administrator.DESKTOP-1CGAII9\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\Administrator.DESKTOP-1CGAII9\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\Administrator.DESKTOP-1CGAII9\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -77,7 +75,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.36f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Tool\Unity2020\Unity\Editor\2021.3.45f1c1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath F:\DPet -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="F:\DPet" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -88,6 +86,14 @@
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.36f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath F:\DPet -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="F:\DPet" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Tool\Unity2020\Unity\Editor\2021.3.45f1c1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\gitSource\DPet -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\gitSource\DPet" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <method v="2" />
@@ -125,6 +131,7 @@
       <workItem from="1749570466072" duration="6918000" />
       <workItem from="1749707493874" duration="11528000" />
       <workItem from="1749819987064" duration="4958000" />
+      <workItem from="1749886517261" duration="6396000" />
     </task>
     <servers />
   </component>
@@ -132,7 +139,7 @@
     <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
-  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
