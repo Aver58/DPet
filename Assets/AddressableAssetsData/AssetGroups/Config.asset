@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: Assets/ToBundle/Config/UIViewDefine.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: bd4b914c32884292afa3099a34853255
-    m_Address: Assets/ToBundle/Config/InputAward.csv
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: de54d9b4ce824b4eb89fcba3f82d9f0b
     m_Address: Assets/ToBundle/Config/PetMap.csv
     m_ReadOnly: 0

@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac315b8e-85b5-474d-bdc8-75d48d4feda3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DPet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DPet/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Controller/PetController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/Controller/PetController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/PetView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Bussiness/View/PetView.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +55,9 @@
   },
   "keyToStringList": {
     "rider.external.source.directories": [
-      "C:\\Users\\Administrator.DESKTOP-1CGAII9\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache",
-      "C:\\Users\\Administrator.DESKTOP-1CGAII9\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache",
-      "C:\\Users\\Administrator.DESKTOP-1CGAII9\\AppData\\Local\\Symbols\\src"
+      "C:\\Users\\zengzhiwei\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\zengzhiwei\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\zengzhiwei\\AppData\\Local\\Symbols\\src"
     ]
   }
 }]]></component>
@@ -75,7 +71,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Tool\Unity2020\Unity\Editor\2021.3.45f1c1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity 2021.3.33f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath F:\DPet -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="F:\DPet" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -83,7 +79,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.36f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity 2021.3.33f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath F:\DPet -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="F:\DPet" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -132,6 +128,8 @@
       <workItem from="1749707493874" duration="11528000" />
       <workItem from="1749819987064" duration="4958000" />
       <workItem from="1749886517261" duration="6396000" />
+      <workItem from="1750125767912" duration="3000" />
+      <workItem from="1750154882228" duration="26000" />
     </task>
     <servers />
   </component>

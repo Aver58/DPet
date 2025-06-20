@@ -96,8 +96,8 @@ public class UIManager : Singleton<UIManager> {
                 }
 
                 var layer = (UILayer)config.uILayer;
-                uiViewBase.Init(layer);
                 uiViewBase.BindController(controller);
+                uiViewBase.Init(layer);
                 uiViewBase.Open();
                 controller.Window = uiViewBase;
                 _uiCache.Add(viewName, uiViewBase);

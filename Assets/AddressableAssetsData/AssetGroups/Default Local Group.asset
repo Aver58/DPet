@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: Assets/ToBundle/Config/Sprite.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: bd4b914c32884292afa3099a34853255
+    m_Address: Assets/ToBundle/Config/InputReward.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0f728d266239ddb4c8a26b329c0e5a74, type: 2}
   m_SchemaSet:
