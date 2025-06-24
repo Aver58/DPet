@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 7337473404582633401}
   - component: {fileID: 4336579316389137533}
   m_Layer: 0
-  m_Name: TxtChestCount
+  m_Name: TxtGiftCount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,6 +833,7 @@ MonoBehaviour:
   ImgHead: {fileID: 1358460924109493898}
   uiMoveObjMono: {fileID: 8394787794794668492}
   TxtInputCount: {fileID: 3873034250284240045}
+  TxtGiftCount: {fileID: 4336579316389137533}
   BtnChest: {fileID: 5553367730287008833}
 --- !u!1 &7857024642962122648
 GameObject:

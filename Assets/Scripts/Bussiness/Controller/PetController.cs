@@ -6,6 +6,7 @@ using UnityEngine;
 namespace Scripts.Bussiness.Controller {
     public class PetController : ControllerBase {
         public Action<int> OnInputCountChange;
+        public Action<int> OnGiftCountChange;
         private List<int> getRewardInputCountList = new List<int>(5);
 
         private int inputCount = 0;
@@ -19,6 +20,14 @@ namespace Scripts.Bussiness.Controller {
         }
 
         private int giftCount = 0;
+        public int GiftCount {
+            get => giftCount;
+            private set {
+                giftCount = value;
+                OnGiftCountChange?.Invoke(value);
+            }
+        }
+
         private Dictionary<int,int> giftCountMap = new Dictionary<int, int>(5){ };
 
         public PetController() {
@@ -49,18 +58,19 @@ namespace Scripts.Bussiness.Controller {
         }
 
         private void CheckGetInputReward() {
-            for (int i = 0; i < getRewardInputCountList.Count; i++) {
+            for (int i = getRewardInputCountList.Count - 1; i >= 0; i--) {
                 var getRewardInputCount = getRewardInputCountList[i];
                 var isTriggered = InputCount % getRewardInputCount == 0;
                 if (isTriggered) {
                     var config = InputRewardConfig.Get(getRewardInputCount.ToString());
                     if (config != null) {
                         var giftId = config.giftId;
-                        giftCount++;
+                        GiftCount++;
                         giftCountMap[giftId]++;
-                    } else {
-                        Debug.LogError($"InputRewardConfig not found for input count: {getRewardInputCount}");
+                        break;
                     }
+
+                    Debug.LogError($"InputRewardConfig not found for input count: {getRewardInputCount}");
                 }
             }
         }
@@ -74,7 +84,11 @@ namespace Scripts.Bussiness.Controller {
                 }
             }
 
-            giftCountMap.Clear();
+            // 清空奖励计数
+            var keys = new List<int>(giftCountMap.Keys);
+            foreach (var key in keys) {
+                giftCountMap[key] = 0;
+            }
         }
         
         private void GetInputReward(int giftId) {
@@ -88,7 +102,7 @@ namespace Scripts.Bussiness.Controller {
             if (petPool.Length > 0) {
                 var randomIndex = UnityEngine.Random.Range(0, petPool.Length);
                 var petId = petPool[randomIndex];
-                Debug.Log($"获得新宠物: {petId}");
+                Debug.Log($"获得新宠物: petId : {petId} todo 获得宠物界面，或者商店界面，点击数可以购买新皮肤");
             } else {
                 Debug.LogWarning($"No pets available in the pool for giftId: {giftId}");
             }

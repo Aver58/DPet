@@ -94,7 +94,7 @@ public class CSVToConfigClassGenerator : Editor {
         sb.AppendLine("        }");
         sb.AppendLine();
         sb.AppendLine("        if (config == null) {");
-        sb.AppendLine($"            UnityEngine.Debug.LogError(\"{className}.csv not fount key : \" + key);");
+        sb.AppendLine($"            UnityEngine.Debug.LogError(\"{fileName}.csv not fount key : \" + key);");
         sb.AppendLine("            return null;");
         sb.AppendLine("        }");
         sb.AppendLine();

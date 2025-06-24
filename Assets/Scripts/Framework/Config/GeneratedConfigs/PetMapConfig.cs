@@ -4,7 +4,9 @@ using System.Collections.Generic;
 [System.Serializable]
 public class PetMapConfig : BaseConfig {
     public int id;
-    public string[] sprites;
+    public string sprite1;
+    public string sprite2;
+    public string sprite3;
 
     public override void Parse(string[] values, string[] headers) {
         for (int i = 0; i < headers.Length; i++) {
@@ -13,8 +15,14 @@ public class PetMapConfig : BaseConfig {
                 case "id":
                     id = int.Parse(values[i]);
                     break;
-                case "sprites":
-                    sprites = values[i].Trim().Split(';',StringSplitOptions.RemoveEmptyEntries);
+                case "sprite1":
+                    sprite1 = values[i].Trim();
+                    break;
+                case "sprite2":
+                    sprite2 = values[i].Trim();
+                    break;
+                case "sprite3":
+                    sprite3 = values[i].Trim();
                     break;
             }
         }

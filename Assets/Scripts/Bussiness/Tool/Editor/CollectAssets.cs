@@ -10,7 +10,7 @@ namespace Bussiness.Tool.Editor {
         [MenuItem("Tools/CollectAssets/CollectSpriteAtlas")]
         public static void CollectSpriteAtlas() {
             var spriteAtlasDirectory = ImageExtension.SpriteAtlasDirectory;
-            string csvPath = "Assets/ToBundle/Config/Localization/Chinese/SpriteAtlas.csv";
+            string csvPath = "Assets/ToBundle/Config/SpriteAtlas.csv";
             if (!System.IO.Directory.Exists(spriteAtlasDirectory)) {
                 Debug.LogError($"Directory not found: {spriteAtlasDirectory}");
                 return;
@@ -47,7 +47,7 @@ namespace Bussiness.Tool.Editor {
         [MenuItem("Tools/CollectAssets/CollectSprite")]
         public static void CollectSprite() {
             string atlasDirectory = "Assets/ToBundle/Atlas";
-            string csvPath = "Assets/ToBundle/Config/Localization/Chinese/Sprite.csv";
+            string csvPath = "Assets/ToBundle/Config/Sprite.csv";
             if (!System.IO.Directory.Exists(atlasDirectory)) {
                 UnityEngine.Debug.LogError($"Directory not found: {atlasDirectory}");
                 return;

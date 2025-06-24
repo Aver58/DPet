@@ -32,7 +32,7 @@ public class SpriteConfig : BaseConfig {
         }
 
         if (config == null) {
-            UnityEngine.Debug.LogError("SpriteConfig.csv not fount key" + key);
+            UnityEngine.Debug.LogError("Sprite.csv not fount key : " + key);
             return null;
         }
 

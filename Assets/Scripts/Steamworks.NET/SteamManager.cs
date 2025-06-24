@@ -24,14 +24,14 @@ public class SteamManager : MonoSingleton<SteamManager> {
 #if !DISABLESTEAMWORKS
 	protected static bool s_EverInitialized = false;
 
-	protected static SteamManager s_instance;
+	protected static SteamManager instance;
 	protected static SteamManager Instance {
 		get {
-			if (s_instance == null) {
+			if (instance == null) {
 				return new GameObject("SteamManager").AddComponent<SteamManager>();
 			}
 			else {
-				return s_instance;
+				return instance;
 			}
 		}
 	}
@@ -56,17 +56,17 @@ public class SteamManager : MonoSingleton<SteamManager> {
 	private static void InitOnPlayMode()
 	{
 		s_EverInitialized = false;
-		s_instance = null;
+		instance = null;
 	}
 #endif
 
 	protected virtual void Awake() {
 		// Only one instance of SteamManager at a time!
-		if (s_instance != null) {
+		if (instance != null) {
 			Destroy(gameObject);
 			return;
 		}
-		s_instance = this;
+		instance = this;
 
 		if(s_EverInitialized) {
 			// This is almost always an error.
@@ -131,8 +131,8 @@ public class SteamManager : MonoSingleton<SteamManager> {
 
 	// This should only ever get called on first load and after an Assembly reload, You should never Disable the Steamworks Manager yourself.
 	protected virtual void OnEnable() {
-		if (s_instance == null) {
-			s_instance = this;
+		if (instance == null) {
+			instance = this;
 		}
 
 		if (!m_bInitialized) {
@@ -151,11 +151,11 @@ public class SteamManager : MonoSingleton<SteamManager> {
 	// Because the SteamManager should be persistent and never disabled or destroyed we can shutdown the SteamAPI here.
 	// Thus it is not recommended to perform any Steamworks work in other OnDestroy functions as the order of execution can not be garenteed upon Shutdown. Prefer OnDisable().
 	protected virtual void OnDestroy() {
-		if (s_instance != this) {
+		if (instance != this) {
 			return;
 		}
 
-		s_instance = null;
+		instance = null;
 
 		if (!m_bInitialized) {
 			return;

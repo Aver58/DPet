@@ -32,8 +32,9 @@ public class GlobalKeyHook : MonoSingleton<GlobalKeyHook> {
 		_timer = new Timer(delegate { Process(); }, null, 0, 16);
 	}
 
-	private void OnDestroy() {
+	protected override void OnDestroy() {
 		_timer?.Dispose();
+		base.OnDestroy();
 	}
 
 	private void Update() {

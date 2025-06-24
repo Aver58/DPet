@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Scripts.Framework.UI;
@@ -8,6 +8,7 @@ using Scripts.Bussiness.Controller;
 
 using Kirurobo;
 using Scripts.Bussiness.GamePlay;
+using DG.Tweening;
 
 public class PetView : UIViewBase {
     public Image ImgMain;
@@ -16,10 +17,13 @@ public class PetView : UIViewBase {
     public Image ImgHead;
     public UIMoveObjMono uiMoveObjMono;
     public Text TxtInputCount;
+    public Text TxtGiftCount;
     public Button BtnChest;
 
     private PetController petController;
     private UniWindowController uniWindowController;
+    // 设置间隔时间
+    private float animationInterval = 0.2f;
 
     protected override void OnInit() {
         petController = Controller as PetController;
@@ -28,6 +32,7 @@ public class PetView : UIViewBase {
             return;
         }
         petController.OnInputCountChange += OnInputCountChange;
+        petController.OnGiftCountChange += OnGiftCountChange;
         uiMoveObjMono.OnPointerDownAction = OnPointerDown;
         GlobalKeyHook.Instance.OnKeyPressed += OnKeyPressed;
         BtnChest.onClick.AddListener(OnBtnChest);
@@ -46,7 +51,7 @@ public class PetView : UIViewBase {
             Debug.LogError($"Pet config not found for id: {petId}");
             return;
         }
-        var petSprite = config.sprites[0];
+        var petSprite = config.sprite1;
         ImgMain.SetSprite(petSprite);
     }
 
@@ -74,6 +79,10 @@ public class PetView : UIViewBase {
         TxtInputCount.text = petController.InputCount.ToString();
     }
 
+    private void OnGiftCountChange(int obj) {
+        TxtGiftCount.text = $"X{petController.GiftCount.ToString()}";
+    }
+
     // 请求领取奖励
     private void OnBtnChest() {
         petController.GetAllReward();
@@ -81,8 +90,11 @@ public class PetView : UIViewBase {
 
     private void OnKeyPressed(int keyDownCount) {
         petController.InputCount++;
-        // tween动画,模拟果冻Q弹的动画
-        LeanTween.
 
+        var imgMainTransform = ImgMain.transform;
+        imgMainTransform.DOKill();
+        imgMainTransform.localScale = Vector3.one;
+        // tween动画,模拟果冻Q弹的动画
+        imgMainTransform.DOPunchScale(new Vector3(0.1f, 0.1f, 0), animationInterval, 10, 1);
     }
 }
