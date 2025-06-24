@@ -10,11 +10,10 @@
             "name_color": "7D6D00",
             "background_color": "3C352E",
             "item_slot": "decoration",
-            "icon_url": "http://cdn.beta.steampowered.com/apps/440/icons/c_fireaxe_pyro_xmas_large.fa878752e1aa09a721a03042a234063b6c929278.png",
-            "icon_url_large": "http://cdn.beta.steampowered.com/apps/440/icons/c_fireaxe_pyro_xmas_large.fa878752e1aa09a721a03042a234063b6c929278.png",
+            "icon_url": "https://cdn.jsdelivr.net/gh/Aver58/PublicIcon@main/DPet/Dog1.png",
+            "icon_url_large": "",
             "tradable": true,
             "marketable": true
         }
     ]
-}
 }

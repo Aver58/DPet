@@ -73,6 +73,8 @@ namespace Scripts.Bussiness.Controller {
                     GetInputReward(giftId);
                 }
             }
+
+            giftCountMap.Clear();
         }
         
         private void GetInputReward(int giftId) {

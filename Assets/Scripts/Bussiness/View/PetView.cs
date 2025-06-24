@@ -19,7 +19,6 @@ public class PetView : UIViewBase {
     public Button BtnChest;
 
     private PetController petController;
-    private float scrollValue = 0f;
     private UniWindowController uniWindowController;
 
     protected override void OnInit() {
@@ -30,7 +29,7 @@ public class PetView : UIViewBase {
         }
         petController.OnInputCountChange += OnInputCountChange;
         uiMoveObjMono.OnPointerDownAction = OnPointerDown;
-        GlobalKeyHook.Instance.OnKeyPressed += (keyDownCount) => { petController.InputCount++; };
+        GlobalKeyHook.Instance.OnKeyPressed += OnKeyPressed;
         BtnChest.onClick.AddListener(OnBtnChest);
         InitSetting();
         InitMainPet();
@@ -74,8 +73,16 @@ public class PetView : UIViewBase {
     private void OnInputCountChange(int value) {
         TxtInputCount.text = petController.InputCount.ToString();
     }
-    
+
+    // 请求领取奖励
     private void OnBtnChest() {
-        
+        petController.GetAllReward();
+    }
+
+    private void OnKeyPressed(int keyDownCount) {
+        petController.InputCount++;
+        // tween动画,模拟果冻Q弹的动画
+        LeanTween.
+
     }
 }
