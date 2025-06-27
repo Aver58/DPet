@@ -84,11 +84,12 @@ namespace Scripts.Bussiness.Controller {
                 }
             }
 
-            // 清空奖励计数
             var keys = new List<int>(giftCountMap.Keys);
             foreach (var key in keys) {
                 giftCountMap[key] = 0;
             }
+
+            GiftCount = 0;
         }
         
         private void GetInputReward(int giftId) {

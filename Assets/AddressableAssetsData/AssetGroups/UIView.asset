@@ -33,14 +33,6 @@ MonoBehaviour:
     m_Address: Assets/ToBundle/Prefabs/TetrisView.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 6c1c622a3ba644e4380cbf3e252ee460
-    m_Address: Assets/ToBundle/Prefabs/PetEntryView.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8f0006192ddce7d4b80a6e401c091ddd
-    m_Address: Assets/ToBundle/Prefabs/MyPrefab.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 21a34d661c6b1f5429bfc15cd920e42e
     m_Address: Assets/ToBundle/Prefabs/SettingView.prefab
     m_ReadOnly: 0
