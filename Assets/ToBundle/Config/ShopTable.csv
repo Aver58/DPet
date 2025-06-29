@@ -1,0 +1,8 @@
+shopId,shopItemName,shopContent
+int,string,int
+商店id,商店道具名称,商店道具内容
+1,普通品质礼包,
+2,
+3,
+4,
+5,
