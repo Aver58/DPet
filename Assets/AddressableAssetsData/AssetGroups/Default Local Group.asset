@@ -301,6 +301,30 @@ MonoBehaviour:
     m_Address: Assets/ToBundle/Sprites/Pet/QPet/spine_141_01.png
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 7ca814e5c55110a468827c63d8c4763b
+    m_Address: Assets/ToBundle/Prefabs/InventoryView.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a3a3a149ecd47d4e9287760de39fd45
+    m_Address: Assets/ToBundle/Prefabs/Widget/ShopItem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3a062994475051f448ff97917d27b6cf
+    m_Address: Assets/ToBundle/Prefabs/Widget/InventoryItem.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 49ec61f7b52542c29528b802f933d56c
+    m_Address: Assets/ToBundle/Config/ShopTable.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cfe26fd07ee665d458f6db9368f2af7a
+    m_Address: Assets/ToBundle/Sprites/Shop/shop_101.jpg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7066e0ce85a91eb4e9e46bbe7e598d7c
+    m_Address: Assets/ToBundle/Atlas/Shop.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0f728d266239ddb4c8a26b329c0e5a74, type: 2}
   m_SchemaSet:

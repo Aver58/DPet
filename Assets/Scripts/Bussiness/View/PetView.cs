@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 using Scripts.Framework.UI;
@@ -9,6 +8,7 @@ using Scripts.Bussiness.Controller;
 using Kirurobo;
 using Scripts.Bussiness.GamePlay;
 using DG.Tweening;
+using Random = UnityEngine.Random;
 
 public class PetView : UIViewBase {
     public Image ImgMain;
@@ -95,6 +95,7 @@ public class PetView : UIViewBase {
         imgMainTransform.DOKill();
         imgMainTransform.localScale = Vector3.one;
         // tween动画,模拟果冻Q弹的动画
-        imgMainTransform.DOPunchScale(new Vector3(0.1f, 0.1f, 0), animationInterval, 10, 1);
+        var tweenScale = Random.Range(0.1f, 0.3f);
+        imgMainTransform.DOPunchScale(new Vector3(tweenScale, tweenScale, 0), animationInterval, 10, 1);
     }
 }
