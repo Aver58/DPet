@@ -1,19 +1,18 @@
 using UnityEngine;
 
-public class InventoryPanel : MonoBehaviour,IPanelBase {
+public class InventoryPanel : ABSPanelBase {
+    public bool IsInit { get; set; }
     public void OnInit() {
-        throw new System.NotImplementedException();
     }
 
     public void OnClear() {
-        throw new System.NotImplementedException();
     }
 
-    public void OnOpen() {
-        throw new System.NotImplementedException();
+    protected override void OnOpen() {
+        base.OnOpen();
     }
 
-    public void OnClose() {
-        throw new System.NotImplementedException();
+    protected override void OnClose() {
+        base.OnClose();
     }
 }

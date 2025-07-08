@@ -83,6 +83,10 @@ public class CSVToConfigClassGenerator : Editor {
         sb.AppendLine("    }");
         sb.AppendLine();
         sb.AppendLine($"    private static Dictionary<string, {className}> cachedConfigs;");
+        sb.AppendLine($"    public static {className} Get(int key) {{");
+        sb.AppendLine("        return Get(key.ToString());");
+        sb.AppendLine("    }");
+        sb.AppendLine();
         sb.AppendLine($"    public static {className} Get(string key) {{");
         sb.AppendLine("        if (cachedConfigs == null) {");
         sb.AppendLine($"            cachedConfigs = ConfigManager.Instance.LoadConfig<{className}>(\"{fileName}.csv\");");

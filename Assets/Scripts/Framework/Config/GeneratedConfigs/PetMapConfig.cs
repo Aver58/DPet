@@ -7,6 +7,9 @@ public class PetMapConfig : BaseConfig {
     public string sprite1;
     public string sprite2;
     public string sprite3;
+    public int maxLv;
+    public int quality;
+    public float clickAdd;
 
     public override void Parse(string[] values, string[] headers) {
         for (int i = 0; i < headers.Length; i++) {
@@ -24,6 +27,15 @@ public class PetMapConfig : BaseConfig {
                 case "sprite3":
                     sprite3 = values[i].Trim();
                     break;
+                case "maxLv":
+                    maxLv = int.Parse(values[i]);
+                    break;
+                case "Quality":
+                    quality = int.Parse(values[i]);
+                    break;
+                case "clickAdd":
+                    clickAdd = float.Parse(values[i]);
+                    break;
             }
         }
     }
@@ -40,7 +52,7 @@ public class PetMapConfig : BaseConfig {
         }
 
         if (config == null) {
-            UnityEngine.Debug.LogError("PetMapConfig.csv not fount key : " + key);
+            UnityEngine.Debug.LogError("PetMap.csv not fount key : " + key);
             return null;
         }
 

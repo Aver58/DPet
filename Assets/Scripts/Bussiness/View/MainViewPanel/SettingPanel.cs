@@ -3,7 +3,8 @@ using Scripts.Bussiness.GamePlay;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingPanel : MonoBehaviour,IPanelBase {
+public class SettingPanel : ABSPanelBase {
+    public bool IsInit { get; set; }
     public Toggle isWindowsTop;
     public Toggle isClickThrough;
     public Dropdown languageDropdown;
@@ -17,10 +18,12 @@ public class SettingPanel : MonoBehaviour,IPanelBase {
     public void OnClear() {
     }
 
-    public void OnOpen() {
+    protected override void OnOpen() {
+        base.OnOpen();
     }
 
-    public void OnClose() {
+    protected override void OnClose() {
+        base.OnClose();
     }
     
     private void InitSettingPanel() {
