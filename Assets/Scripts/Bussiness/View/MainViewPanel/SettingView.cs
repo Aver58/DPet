@@ -21,9 +21,9 @@ public class SettingView : UIViewBase {
         uniWindowController = UniWindowController.current;
         BtnClose.onClick.AddListener(() => { ControllerManager.Instance.Close<SettingController>(); });
         panelList = new List<ABSPanelBase>() { InventoryPanel,ShopPanel,SettingPanel };
-        BtnInventory.onClick.AddListener(() => { OnClickTab(0); });
-        BtnShop.onClick.AddListener(() => { OnClickTab(1); });
-        BtnSetting.onClick.AddListener(() => { OnClickTab(2); });
+        BtnInventory.onClick.AddListener(() => { OnClickTab((int)TabIndex.Inventory); });
+        BtnShop.onClick.AddListener(() => { OnClickTab((int)TabIndex.Shop); });
+        BtnSetting.onClick.AddListener(() => { OnClickTab((int)TabIndex.Setting); });
     }
 
     protected override void OnClear() { }
@@ -37,7 +37,7 @@ public class SettingView : UIViewBase {
     
     protected override void OnClose() { }
 
-    private void OnClickTab(int selectIndex) {
+    public void OnClickTab(int selectIndex) {
         var panel = panelList[lastSelectIndex];
         if (panel != null) {
             panel.Close();
@@ -49,5 +49,11 @@ public class SettingView : UIViewBase {
             panel.Init();
             panel.Open();
         }
+    }
+
+    public enum TabIndex {
+        Inventory = 0,
+        Shop = 1,
+        Setting = 2
     }
 }

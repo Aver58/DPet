@@ -13,7 +13,7 @@ public class ShopItem : MonoBehaviour {
 
     public void Init(ShopTableConfig config) {
         this.config = config;
-        TxtDesc.text = $"{config.shopItemName}\r\nN:{config.nProbability}\tR:{config.rProbability}\tSR:{config.sRProbability}\tSSR:{config.sSRProbability}";
+        TxtDesc.text = $"{config.shopItemName}\r\nN:{config.nProbability}%\tR:{config.rProbability}%\tSR:{config.sRProbability}%\tSSR:{config.sSRProbability}%";
         TxtPrice.text = config.price.ToString();
         ImgIcon.SetSprite(config.shopIcon);
         BtnBuy.onClick.AddListener((() => {

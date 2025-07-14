@@ -6,8 +6,9 @@ using UnityEngine;
 namespace Scripts.Bussiness.Controller {
     public class PetController : ControllerBase {
         public Action<int> OnInputCountChange;
-        public Action<int> OnGiftCountChange;
-        private List<int> getRewardInputCountList = new List<int>(5);
+        public Action<int> OnGoldCountChange;
+        private int ClickGoldMin = 1;
+        private int ClickGoldMax = 3;
 
         private int inputCount = 0;
         public int InputCount {
@@ -15,10 +16,35 @@ namespace Scripts.Bussiness.Controller {
             set {
                 inputCount = value;
                 OnInputCountChange?.Invoke(value);
-                CheckGetInputReward();
+                // CheckGetInputReward();
+                AddGold();
             }
         }
 
+        private int goldCount = 0;
+        public int GoldCount {
+            get => goldCount;
+            set {
+                goldCount = value;
+                OnGoldCountChange?.Invoke(value);
+            }
+        }
+
+        public PetController() {
+            // InitInputRewardMap();
+            // InitGiftCountMap();
+        }
+
+        // 金币获取
+        private void AddGold() {
+
+        }
+
+        #region Obsolete Gift
+
+        private List<int> getRewardInputCountList = new List<int>(5);
+        public Action<int> OnGiftCountChange;
+        private Dictionary<int,int> giftCountMap = new Dictionary<int, int>(5){ };
         private int giftCount = 0;
         public int GiftCount {
             get => giftCount;
@@ -28,11 +54,13 @@ namespace Scripts.Bussiness.Controller {
             }
         }
 
-        private Dictionary<int,int> giftCountMap = new Dictionary<int, int>(5){ };
-
-        public PetController() {
-            InitInputRewardMap();
-            InitGiftCountMap();
+        private void InitInputRewardMap() {
+            var keys = InputRewardConfig.GetKeys();
+            for (int i = 0; i < keys.Count; i++) {
+                var key = keys[i];
+                var count = int.Parse(key);
+                getRewardInputCountList.Add(count);
+            }
         }
 
         private void InitGiftCountMap() {
@@ -40,20 +68,10 @@ namespace Scripts.Bussiness.Controller {
             for (int i = 0; i < keys.Count; i++) {
                 var key = keys[i];
                 if (int.TryParse(key, out int giftId)) {
-                    // todo 获取缓存
                     giftCountMap[giftId] = 0;
                 } else {
                     Debug.LogError($"Invalid GiftType: {key}");
                 }
-            }
-        }
-
-        private void InitInputRewardMap() {
-            var keys = InputRewardConfig.GetKeys();
-            for (int i = 0; i < keys.Count; i++) {
-                var key = keys[i];
-                var count = int.Parse(key);
-                getRewardInputCountList.Add(count);
             }
         }
 
@@ -75,23 +93,6 @@ namespace Scripts.Bussiness.Controller {
             }
         }
 
-        public void GetAllReward() {
-            foreach (var keyValuePair in giftCountMap) {
-                var giftId = keyValuePair.Key;
-                var count = keyValuePair.Value;
-                for (int i = 0; i < count; i++) {
-                    GetInputReward(giftId);
-                }
-            }
-
-            var keys = new List<int>(giftCountMap.Keys);
-            foreach (var key in keys) {
-                giftCountMap[key] = 0;
-            }
-
-            GiftCount = 0;
-        }
-        
         private void GetInputReward(int giftId) {
             var config = GiftTableConfig.Get(giftId.ToString());
             if (config == null) {
@@ -108,13 +109,15 @@ namespace Scripts.Bussiness.Controller {
                 Debug.LogWarning($"No pets available in the pool for giftId: {giftId}");
             }
         }
-    }
 
-    public enum GiftType {
-        A = 1,
-        B,
-        C,
-        D,
-        E,
+        public enum GiftType {
+            A = 1,
+            B,
+            C,
+            D,
+            E,
+        }
+
+        #endregion
     }
 }

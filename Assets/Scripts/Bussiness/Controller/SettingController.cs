@@ -10,6 +10,9 @@ namespace Scripts.Bussiness.Controller {
             InitAllInventoryItem();
         }
 
+        public void OnClickTab(SettingView.TabIndex selectIndex) {
+        }
+
         private void InitAllInventoryItem() {
             // 初始化仓库数据，添加默认仓库宠物
 
@@ -78,9 +81,9 @@ namespace Scripts.Bussiness.Controller {
     }
 
     public enum QualityDefine {
-        Normal,//N
-        Rare,//R
-        SuperRare,//SR
-        SuperSuperRare,//SSR
+        Normal,         //N
+        Rare,           //R
+        SuperRare,      //SR
+        SuperSuperRare, //SSR
     }
 }

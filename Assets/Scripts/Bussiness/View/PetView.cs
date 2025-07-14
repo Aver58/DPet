@@ -80,12 +80,14 @@ public class PetView : UIViewBase {
     }
 
     private void OnGiftCountChange(int obj) {
-        TxtGiftCount.text = $"X{petController.GiftCount.ToString()}";
+        TxtGiftCount.text = petController.GiftCount.ToString();
     }
 
     // 请求领取奖励
     private void OnBtnChest() {
-        petController.GetAllReward();
+        // petController.GetAllReward();
+        // 打开商店界面
+        ControllerManager.Instance.OpenAsync<SettingController>();
     }
 
     private void OnKeyPressed(int keyDownCount) {
