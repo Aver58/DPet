@@ -3,14 +3,12 @@ using UnityEngine;
 public class ShopPanel : ABSPanelBase {
     public GameObject ShopItem;
     public Transform ShopContent;
-    public bool IsInit { get; set; }
 
-    public void OnInit() {
+    protected override void OnInit() {
         InitShopItem();
-        IsInit = true;
     }
 
-    public void OnClear() {
+    protected override  void OnClear() {
     }
 
     protected override void OnOpen() {

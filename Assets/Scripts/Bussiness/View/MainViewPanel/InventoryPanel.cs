@@ -1,11 +1,10 @@
 using UnityEngine;
 
 public class InventoryPanel : ABSPanelBase {
-    public bool IsInit { get; set; }
-    public void OnInit() {
+    protected override  void OnInit() {
     }
 
-    public void OnClear() {
+    protected override  void OnClear() {
     }
 
     protected override void OnOpen() {

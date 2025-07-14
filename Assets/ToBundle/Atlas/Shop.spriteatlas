@@ -38,9 +38,13 @@ SpriteAtlas:
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
-  - {fileID: 21300000, guid: cfe26fd07ee665d458f6db9368f2af7a, type: 3}
+  - {fileID: 21300000, guid: 033e4850e071b5548a1d52fafec899fe, type: 3}
+  - {fileID: 21300000, guid: b48a96a37c9e51b42acba21bb60f2502, type: 3}
+  - {fileID: 21300000, guid: 9b75800dfccc82544a870d66dc3969c1, type: 3}
   m_PackedSpriteNamesToIndex:
   - shop_101
+  - shop_103
+  - shop_102
   m_RenderDataMap: {}
   m_Tag: Shop
   m_IsVariant: 0

@@ -2,5 +2,5 @@ shopId,shopItemName,shopIcon,NProbability,RProbability,SRProbability,SSRProbabil
 int,string,string,float,float,float,float,int
 商店id,商店道具名称,礼包icon,N概率,R概率,SR概率,SSR概率,价格
 1,普通品质礼包,shop_101,80,10,9,1,10
-2,高级品质礼包,shop_101,50,30,18,2,100
-3,稀有品质礼包,shop_101,10,50,35,5,1000
+2,高级品质礼包,shop_102,50,30,18,2,100
+3,稀有品质礼包,shop_103,10,50,35,5,1000

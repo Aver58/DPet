@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 [System.Serializable]
-public class PetMapConfig : BaseConfig {
+public partial class PetMapConfig : BaseConfig {
     public int id;
     public string sprite1;
     public string sprite2;

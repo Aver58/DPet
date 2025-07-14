@@ -317,12 +317,20 @@ MonoBehaviour:
     m_Address: Assets/ToBundle/Config/ShopTable.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: cfe26fd07ee665d458f6db9368f2af7a
-    m_Address: Assets/ToBundle/Sprites/Shop/shop_101.jpg
+  - m_GUID: b48a96a37c9e51b42acba21bb60f2502
+    m_Address: Assets/ToBundle/Sprites/Shop/shop_103.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 7066e0ce85a91eb4e9e46bbe7e598d7c
     m_Address: Assets/ToBundle/Atlas/Shop.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 033e4850e071b5548a1d52fafec899fe
+    m_Address: Assets/ToBundle/Sprites/Shop/shop_101.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9b75800dfccc82544a870d66dc3969c1
+    m_Address: Assets/ToBundle/Sprites/Shop/shop_102.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

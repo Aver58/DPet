@@ -4,18 +4,17 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SettingPanel : ABSPanelBase {
-    public bool IsInit { get; set; }
     public Toggle isWindowsTop;
     public Toggle isClickThrough;
     public Dropdown languageDropdown;
     private UniWindowController uniWindowController;
 
-    public void OnInit() {
+    protected override  void OnInit() {
         uniWindowController = UniWindowController.current;
         InitSettingPanel();
     }
 
-    public void OnClear() {
+    protected override  void OnClear() {
     }
 
     protected override void OnOpen() {
