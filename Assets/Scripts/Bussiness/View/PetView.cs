@@ -32,7 +32,7 @@ public class PetView : UIViewBase {
             return;
         }
         petController.OnInputCountChange += OnInputCountChange;
-        petController.OnGiftCountChange += OnGiftCountChange;
+        petController.OnGoldCountChange += OnGoldCountChange;
         uiMoveObjMono.OnPointerDownAction = OnPointerDown;
         GlobalKeyHook.Instance.OnKeyPressed += OnKeyPressed;
         BtnChest.onClick.AddListener(OnBtnChest);
@@ -79,15 +79,13 @@ public class PetView : UIViewBase {
         TxtInputCount.text = petController.InputCount.ToString();
     }
 
-    private void OnGiftCountChange(int obj) {
-        TxtGiftCount.text = petController.GiftCount.ToString();
+    private void OnGoldCountChange(int obj) {
+        TxtGiftCount.text = petController.GoldCount.ToString();
     }
 
-    // 请求领取奖励
+    // 打开商店界面
     private void OnBtnChest() {
-        // petController.GetAllReward();
-        // 打开商店界面
-        ControllerManager.Instance.OpenAsync<SettingController>();
+        ControllerManager.Instance.Get<SettingController>().OnClickTab(SettingView.TabIndex.Shop);
     }
 
     private void OnKeyPressed(int keyDownCount) {

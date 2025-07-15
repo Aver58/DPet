@@ -44,7 +44,7 @@ public class UIManager : Singleton<UIManager> {
     private readonly Dictionary<string, UIViewBase> windows = new ();
 
     // 打开界面
-    public UIViewBase Open(ControllerBase controller) {
+    public UIViewBase OpenAsync(ControllerBase controller) {
         var viewName = controller.FunctionName;
         var window = FindWindow(viewName);
         if (window == null) {

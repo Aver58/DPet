@@ -18,7 +18,7 @@ namespace Scripts.Framework.UI {
             }
 
             IsOpen = true;
-            Window = UIManager.Instance.Open(this);
+            Window = UIManager.Instance.OpenAsync(this);
             if (Window) {
                 Window.gameObject.SetActive(true);
             }

@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using Scripts.Bussiness.Controller;
 using Scripts.Framework.UI;
 
-using Kirurobo;
 using UnityEngine.UI;
 
 public class SettingView : UIViewBase {
@@ -15,10 +14,9 @@ public class SettingView : UIViewBase {
     public Button BtnClose;
     private List<ABSPanelBase> panelList;
     private int lastSelectIndex = 0;
+    private new SettingController Controller => Controller;
 
-    private UniWindowController uniWindowController;
     protected override void OnInit() {
-        uniWindowController = UniWindowController.current;
         BtnClose.onClick.AddListener(() => { ControllerManager.Instance.Close<SettingController>(); });
         panelList = new List<ABSPanelBase>() { InventoryPanel,ShopPanel,SettingPanel };
         BtnInventory.onClick.AddListener(() => { OnClickTab((int)TabIndex.Inventory); });
@@ -33,6 +31,10 @@ public class SettingView : UIViewBase {
         ShopPanel.gameObject.SetActive(false);
         SettingPanel.gameObject.SetActive(false);
         BtnInventory.onClick.Invoke();
+        lastSelectIndex = Controller.LastSelectIndex;
+        if (lastSelectIndex != 0) {
+            OnClickTab(lastSelectIndex);
+        }
     }
     
     protected override void OnClose() { }
@@ -44,6 +46,7 @@ public class SettingView : UIViewBase {
         }
 
         lastSelectIndex = selectIndex;
+        Controller.LastSelectIndex = selectIndex;
         panel = panelList[selectIndex];
         if (panel != null) {
             panel.Init();

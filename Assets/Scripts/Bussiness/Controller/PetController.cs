@@ -37,7 +37,9 @@ namespace Scripts.Bussiness.Controller {
 
         // 金币获取
         private void AddGold() {
-
+            var randomGold = UnityEngine.Random.Range(ClickGoldMin, ClickGoldMax + 1);
+            GoldCount += randomGold;
+            Debug.Log($"获得金币: {randomGold} 当前金币: {GoldCount}");
         }
 
         #region Obsolete Gift

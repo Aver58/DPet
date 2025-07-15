@@ -1,6 +1,7 @@
+using Scripts.Framework.UI;
 using UnityEngine;
 
-public abstract class ABSPanelBase: MonoBehaviour {
+public abstract class ABSPanelBase : MonoBehaviour {
     private bool IsInit;
     public virtual void Init() {
         if (!IsInit) {

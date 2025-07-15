@@ -41,6 +41,10 @@ public partial class PetMapConfig : BaseConfig {
     }
 
     private static Dictionary<string, PetMapConfig> cachedConfigs;
+    public static PetMapConfig Get(int key) {
+        return Get(key.ToString());
+    }
+
     public static PetMapConfig Get(string key) {
         if (cachedConfigs == null) {
             cachedConfigs = ConfigManager.Instance.LoadConfig<PetMapConfig>("PetMap.csv");
