@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Scripts.Framework.UI;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Scripts.Bussiness.Controller {
     public class PetController : ControllerBase {
@@ -36,10 +37,30 @@ namespace Scripts.Bussiness.Controller {
         }
 
         // 金币获取
+        private float randomEventProbability = 0.001f; // 0.1% 概率
         private void AddGold() {
+            //随机事件奖励(0.1%概率)
+            if (Random.Range(0f, 1f) < randomEventProbability) {
+                int bonus = 100;
+                // todo 动画表现
+                AddCoin(bonus);
+                Debug.Log("触发幸运金币，额外奖励：" + bonus);
+            }
+
+            // 阶段性奖励读取配置
+            if (inputCount % 1000 == 0) {
+                int stageBonus = Random.Range(100, 200);
+                AddCoin(stageBonus);
+                Debug.Log("达到输入里程碑，额外奖励：" + stageBonus);
+            }
+
             var randomGold = UnityEngine.Random.Range(ClickGoldMin, ClickGoldMax + 1);
             GoldCount += randomGold;
             Debug.Log($"获得金币: {randomGold} 当前金币: {GoldCount}");
+        }
+
+        private void AddCoin(int count) {
+            GoldCount += count;
         }
 
         #region Obsolete Gift

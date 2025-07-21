@@ -39,11 +39,21 @@ SpriteAtlas:
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 033e4850e071b5548a1d52fafec899fe, type: 3}
+  - {fileID: 21300000, guid: 8f7938c2b75cc774a8432ed6c8de768f, type: 3}
   - {fileID: 21300000, guid: b48a96a37c9e51b42acba21bb60f2502, type: 3}
+  - {fileID: 21300000, guid: a9a496e5a542aa745b1fbc89a93f6659, type: 3}
+  - {fileID: 21300000, guid: 98553dc806251fa4493e3ba40c7bd7be, type: 3}
+  - {fileID: 21300000, guid: f09bb4899ee4e0046a6a5281b7704d88, type: 3}
+  - {fileID: 21300000, guid: e5f058aa394838e4b92fa34ee59c0f2e, type: 3}
   - {fileID: 21300000, guid: 9b75800dfccc82544a870d66dc3969c1, type: 3}
   m_PackedSpriteNamesToIndex:
   - shop_101
+  - QualityBorder2
   - shop_103
+  - QualityBorder5
+  - QualityBorder1
+  - QualityBorder4
+  - QualityBorder3
   - shop_102
   m_RenderDataMap: {}
   m_Tag: Shop

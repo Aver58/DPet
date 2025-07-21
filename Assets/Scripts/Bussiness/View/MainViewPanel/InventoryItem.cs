@@ -1,13 +1,12 @@
 using Scripts.Framework.UI;
 using UnityEngine;
 using UnityEngine.UI;
-using Scripts.Framework.UI;
 
 public class InventoryItem : MonoBehaviour {
     public Image ImgQuality;
     public Image ImgIcon;
 
-    // todo 拖拽合成，随机升级，进阶
+    // todo 拖拽合成，随机升级，升级到最高品质，可以进阶
     public void Init(int petId) {
         var config = PetMapConfig.Get(petId);
         if (config == null) {
@@ -15,7 +14,8 @@ public class InventoryItem : MonoBehaviour {
             return;
         }
 
-        // ImgQuality.sprite = config.qualitySprite;
+        ImgQuality.SetSprite($"QualityBorder{config.quality +1}");
         ImgIcon.SetSprite(config.sprite1);
+        ImgIcon.enabled = true;
     }
 }

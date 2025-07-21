@@ -19,6 +19,7 @@ public class PetView : UIViewBase {
     public Text TxtInputCount;
     public Text TxtGiftCount;
     public Button BtnChest;
+    public Slider SliderInputCount;
 
     private PetController petController;
     private UniWindowController uniWindowController;
@@ -77,6 +78,7 @@ public class PetView : UIViewBase {
 
     private void OnInputCountChange(int value) {
         TxtInputCount.text = petController.InputCount.ToString();
+        SliderInputCount.value = petController.InputCount;
     }
 
     private void OnGoldCountChange(int obj) {
@@ -90,7 +92,6 @@ public class PetView : UIViewBase {
 
     private void OnKeyPressed(int keyDownCount) {
         petController.InputCount++;
-
         var imgMainTransform = ImgMain.transform;
         imgMainTransform.DOKill();
         imgMainTransform.localScale = Vector3.one;

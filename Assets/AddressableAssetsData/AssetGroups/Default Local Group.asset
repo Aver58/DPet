@@ -333,6 +333,26 @@ MonoBehaviour:
     m_Address: Assets/ToBundle/Sprites/Shop/shop_102.png
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: e5f058aa394838e4b92fa34ee59c0f2e
+    m_Address: Assets/ToBundle/Sprites/Shop/QualityBorder3.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f09bb4899ee4e0046a6a5281b7704d88
+    m_Address: Assets/ToBundle/Sprites/Shop/QualityBorder4.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a9a496e5a542aa745b1fbc89a93f6659
+    m_Address: Assets/ToBundle/Sprites/Shop/QualityBorder5.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8f7938c2b75cc774a8432ed6c8de768f
+    m_Address: Assets/ToBundle/Sprites/Shop/QualityBorder2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 98553dc806251fa4493e3ba40c7bd7be
+    m_Address: Assets/ToBundle/Sprites/Shop/QualityBorder1.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0f728d266239ddb4c8a26b329c0e5a74, type: 2}
   m_SchemaSet:

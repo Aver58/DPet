@@ -14,7 +14,7 @@ public class SettingView : UIViewBase {
     public Button BtnClose;
     private List<ABSPanelBase> panelList;
     private int lastSelectIndex = 0;
-    private new SettingController Controller => Controller;
+    private SettingController SettingController => Controller as SettingController;
 
     protected override void OnInit() {
         BtnClose.onClick.AddListener(() => { ControllerManager.Instance.Close<SettingController>(); });
@@ -31,7 +31,7 @@ public class SettingView : UIViewBase {
         ShopPanel.gameObject.SetActive(false);
         SettingPanel.gameObject.SetActive(false);
         BtnInventory.onClick.Invoke();
-        lastSelectIndex = Controller.LastSelectIndex;
+        lastSelectIndex = SettingController.LastSelectIndex;
         if (lastSelectIndex != 0) {
             OnClickTab(lastSelectIndex);
         }
@@ -46,7 +46,7 @@ public class SettingView : UIViewBase {
         }
 
         lastSelectIndex = selectIndex;
-        Controller.LastSelectIndex = selectIndex;
+        SettingController.LastSelectIndex = selectIndex;
         panel = panelList[selectIndex];
         if (panel != null) {
             panel.Init();

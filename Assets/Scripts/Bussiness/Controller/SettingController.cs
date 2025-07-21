@@ -5,7 +5,6 @@ using UnityEngine;
 namespace Scripts.Bussiness.Controller {
     public class SettingController : ControllerBase {
         public int LastSelectIndex { get; set; }
-        // 仓库数据
         private List<InventoryItemData> inventoryItemDatas = new List<InventoryItemData>();
         private int defaultPetId = 1;
         public SettingController() {
@@ -91,6 +90,7 @@ namespace Scripts.Bussiness.Controller {
             Debug.Log($"Bought item with shopId: {shopId}, quality: {quality}, petId: {petId}");
             // 进入仓库
             AddInventoryItem(petId);
+            ControllerManager.Instance.Get<PetController>().GoldCount -= config.price;
         }
 
         #endregion
