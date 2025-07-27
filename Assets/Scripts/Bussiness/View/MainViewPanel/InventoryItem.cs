@@ -14,8 +14,8 @@ public class InventoryItem : MonoBehaviour {
             return;
         }
 
-        ImgQuality.SetSprite($"QualityBorder{config.quality +1}");
-        ImgIcon.SetSprite(config.sprite1);
+        ImgQuality.SetSprite($"QualityBorder{config.quality + 1}");
+        ImgIcon.SetSprite(config.sprite1, true);
         ImgIcon.enabled = true;
     }
 }

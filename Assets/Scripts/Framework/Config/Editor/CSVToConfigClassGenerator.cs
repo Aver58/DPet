@@ -47,7 +47,7 @@ public class CSVToConfigClassGenerator : Editor {
         sb.AppendLine("using System.Collections.Generic;");
         sb.AppendLine();
         sb.AppendLine("[System.Serializable]");
-        sb.AppendLine($"public class {className} : BaseConfig {{");
+        sb.AppendLine($"public partial class {className} : BaseConfig {{");
         for (int i = 0; i < headers.Length; i++) {
             string fieldName = ToCamelCase(headers[i]);
             string fieldType = types[i];

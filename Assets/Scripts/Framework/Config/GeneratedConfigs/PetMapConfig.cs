@@ -4,12 +4,18 @@ using System.Collections.Generic;
 [System.Serializable]
 public partial class PetMapConfig : BaseConfig {
     public int id;
+    public string name;
+    public int quality;
+    public int maxLv;
+    public float price;
     public string sprite1;
     public string sprite2;
     public string sprite3;
-    public int maxLv;
-    public int quality;
-    public float clickAdd;
+    public float lv1Add;
+    public float lv2Add;
+    public float lv3Add;
+    public int lv1Times;
+    public int lv2Times;
 
     public override void Parse(string[] values, string[] headers) {
         for (int i = 0; i < headers.Length; i++) {
@@ -17,6 +23,18 @@ public partial class PetMapConfig : BaseConfig {
             switch (header) {
                 case "id":
                     id = int.Parse(values[i]);
+                    break;
+                case "name":
+                    name = values[i].Trim();
+                    break;
+                case "Quality":
+                    quality = int.Parse(values[i]);
+                    break;
+                case "maxLv":
+                    maxLv = int.Parse(values[i]);
+                    break;
+                case "price":
+                    price = float.Parse(values[i]);
                     break;
                 case "sprite1":
                     sprite1 = values[i].Trim();
@@ -27,14 +45,20 @@ public partial class PetMapConfig : BaseConfig {
                 case "sprite3":
                     sprite3 = values[i].Trim();
                     break;
-                case "maxLv":
-                    maxLv = int.Parse(values[i]);
+                case "lv1Add":
+                    lv1Add = float.Parse(values[i]);
                     break;
-                case "Quality":
-                    quality = int.Parse(values[i]);
+                case "lv2Add":
+                    lv2Add = float.Parse(values[i]);
                     break;
-                case "clickAdd":
-                    clickAdd = float.Parse(values[i]);
+                case "lv3Add":
+                    lv3Add = float.Parse(values[i]);
+                    break;
+                case "lv1Times":
+                    lv1Times = int.Parse(values[i]);
+                    break;
+                case "lv2Times":
+                    lv2Times = int.Parse(values[i]);
                     break;
             }
         }

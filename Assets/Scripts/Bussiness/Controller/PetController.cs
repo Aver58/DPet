@@ -6,34 +6,50 @@ using Random = UnityEngine.Random;
 
 namespace Scripts.Bussiness.Controller {
     public class PetController : ControllerBase {
+        private List<int> inputTimesList = new List<int>(6);
+        private int currentRewardIndex = -1;
+
+        public int CurrentRewardInputTimes = 0;
+        public int CurrentRewardTotalInputTimes = 0;
         public Action<int> OnInputCountChange;
         public Action<int> OnGoldCountChange;
-        private int ClickGoldMin = 1;
-        private int ClickGoldMax = 3;
 
         private int inputCount = 0;
         public int InputCount {
             get => inputCount;
             set {
                 inputCount = value;
+                CurrentRewardInputTimes++;
                 OnInputCountChange?.Invoke(value);
-                // CheckGetInputReward();
                 AddGold();
             }
         }
 
-        private int goldCount = 0;
-        public int GoldCount {
-            get => goldCount;
+        private int coinCount = 0;
+        public int CoinCount {
+            get => coinCount;
             set {
-                goldCount = value;
+                coinCount = value;
                 OnGoldCountChange?.Invoke(value);
             }
         }
 
         public PetController() {
-            // InitInputRewardMap();
-            // InitGiftCountMap();
+            InitInputRewardMap();
+        }
+
+        private void InitInputRewardMap() {
+            var keys = InputRewardConfig.GetKeys();
+            for (int i = 0; i < keys.Count; i++) {
+                var key = keys[i];
+                var config = InputRewardConfig.Get(key);
+                var count = config.count;
+                inputTimesList.Add(count);
+                if (currentRewardIndex == -1 && CurrentRewardInputTimes < count) {
+                    currentRewardIndex = config.id;
+                    CurrentRewardTotalInputTimes = count;
+                }
+            }
         }
 
         // 金币获取
@@ -48,99 +64,34 @@ namespace Scripts.Bussiness.Controller {
             }
 
             // 阶段性奖励读取配置
-            if (inputCount % 1000 == 0) {
-                int stageBonus = Random.Range(100, 200);
+            if (CurrentRewardInputTimes % CurrentRewardTotalInputTimes == 0) {
+                var config = InputRewardConfig.Get(currentRewardIndex);
+                int stageBonus = Random.Range(config.min, config.max);
                 AddCoin(stageBonus);
                 Debug.Log("达到输入里程碑，额外奖励：" + stageBonus);
-            }
+                if (CurrentRewardInputTimes >= GetMaxInputCount()) {
+                    // 重复奖励阶段
+                    currentRewardIndex = 1;
+                    CurrentRewardInputTimes = 0;
+                } else {
+                    currentRewardIndex++;
+                }
 
-            var randomGold = UnityEngine.Random.Range(ClickGoldMin, ClickGoldMax + 1);
-            GoldCount += randomGold;
-            Debug.Log($"获得金币: {randomGold} 当前金币: {GoldCount}");
+                config = InputRewardConfig.Get(currentRewardIndex);
+                CurrentRewardTotalInputTimes = config.count;
+            }
         }
 
         private void AddCoin(int count) {
-            GoldCount += count;
+            CoinCount += count;
         }
 
-        #region Obsolete Gift
-
-        private List<int> getRewardInputCountList = new List<int>(5);
-        public Action<int> OnGiftCountChange;
-        private Dictionary<int,int> giftCountMap = new Dictionary<int, int>(5){ };
-        private int giftCount = 0;
-        public int GiftCount {
-            get => giftCount;
-            private set {
-                giftCount = value;
-                OnGiftCountChange?.Invoke(value);
-            }
-        }
-
-        private void InitInputRewardMap() {
-            var keys = InputRewardConfig.GetKeys();
-            for (int i = 0; i < keys.Count; i++) {
-                var key = keys[i];
-                var count = int.Parse(key);
-                getRewardInputCountList.Add(count);
-            }
-        }
-
-        private void InitGiftCountMap() {
-            var keys = GiftTableConfig.GetKeys();
-            for (int i = 0; i < keys.Count; i++) {
-                var key = keys[i];
-                if (int.TryParse(key, out int giftId)) {
-                    giftCountMap[giftId] = 0;
-                } else {
-                    Debug.LogError($"Invalid GiftType: {key}");
-                }
-            }
-        }
-
-        private void CheckGetInputReward() {
-            for (int i = getRewardInputCountList.Count - 1; i >= 0; i--) {
-                var getRewardInputCount = getRewardInputCountList[i];
-                var isTriggered = InputCount % getRewardInputCount == 0;
-                if (isTriggered) {
-                    var config = InputRewardConfig.Get(getRewardInputCount.ToString());
-                    if (config != null) {
-                        var giftId = config.giftId;
-                        GiftCount++;
-                        giftCountMap[giftId]++;
-                        break;
-                    }
-
-                    Debug.LogError($"InputRewardConfig not found for input count: {getRewardInputCount}");
-                }
-            }
-        }
-
-        private void GetInputReward(int giftId) {
-            var config = GiftTableConfig.Get(giftId.ToString());
-            if (config == null) {
-                Debug.LogError($"GiftTableConfig not found for giftId: {giftId}");
-                return;
+        private int GetMaxInputCount() {
+            if (inputTimesList.Count > 0) {
+                return inputTimesList[inputTimesList.Count - 1];
             }
 
-            var petPool = config.petPool;
-            if (petPool.Length > 0) {
-                var randomIndex = UnityEngine.Random.Range(0, petPool.Length);
-                var petId = petPool[randomIndex];
-                Debug.Log($"获得新宠物: petId : {petId} todo 获得宠物界面，或者商店界面，点击数可以购买新皮肤");
-            } else {
-                Debug.LogWarning($"No pets available in the pool for giftId: {giftId}");
-            }
+            return 0;
         }
-
-        public enum GiftType {
-            A = 1,
-            B,
-            C,
-            D,
-            E,
-        }
-
-        #endregion
     }
 }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 [System.Serializable]
 public class InputRewardConfig : BaseConfig {
     public int id;
-    public int giftId;
+    public int count;
+    public int min;
+    public int max;
 
     public override void Parse(string[] values, string[] headers) {
         for (int i = 0; i < headers.Length; i++) {
@@ -13,14 +15,24 @@ public class InputRewardConfig : BaseConfig {
                 case "id":
                     id = int.Parse(values[i]);
                     break;
-                case "giftId":
-                    giftId = int.Parse(values[i]);
+                case "count":
+                    count = int.Parse(values[i]);
+                    break;
+                case "min":
+                    min = int.Parse(values[i]);
+                    break;
+                case "max":
+                    max = int.Parse(values[i]);
                     break;
             }
         }
     }
 
     private static Dictionary<string, InputRewardConfig> cachedConfigs;
+    public static InputRewardConfig Get(int key) {
+        return Get(key.ToString());
+    }
+
     public static InputRewardConfig Get(string key) {
         if (cachedConfigs == null) {
             cachedConfigs = ConfigManager.Instance.LoadConfig<InputRewardConfig>("InputReward.csv");
@@ -32,7 +44,7 @@ public class InputRewardConfig : BaseConfig {
         }
 
         if (config == null) {
-            UnityEngine.Debug.LogError("InputRewardConfig.csv not fount key : " + key);
+            UnityEngine.Debug.LogError("InputReward.csv not fount key : " + key);
             return null;
         }
 

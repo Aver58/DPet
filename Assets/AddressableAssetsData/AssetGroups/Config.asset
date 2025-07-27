@@ -21,26 +21,27 @@ MonoBehaviour:
     m_Address: Assets/ToBundle/Config/UIViewDefine.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: de54d9b4ce824b4eb89fcba3f82d9f0b
-    m_Address: Assets/ToBundle/Config/PetMap.csv
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ff67c1684bec4364b8aec28ee593df6c
-    m_Address: Assets/ToBundle/Config/TestFile.csv
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5ea27fee66484590ab20bd6d04975440
     m_Address: Assets/ToBundle/Config/Localization/Chinese/Language.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 9e310ea1a82448e3a26362ba42bc0f58
-    m_Address: Assets/ToBundle/Config/GiftTable.csv
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: de54d9b4ce824b4eb89fcba3f82d9f0b
+    m_Address: Assets/ToBundle/Config/PetMap.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: edc45afaa5f546c48d2cd5198256a1f3
     m_Address: Assets/ToBundle/Config/Localization/English/Language.csv
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff67c1684bec4364b8aec28ee593df6c
+    m_Address: Assets/ToBundle/Config/TestFile.csv
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0f728d266239ddb4c8a26b329c0e5a74, type: 2}
   m_SchemaSet:

@@ -8,6 +8,7 @@ using Scripts.Bussiness.Controller;
 using Kirurobo;
 using Scripts.Bussiness.GamePlay;
 using DG.Tweening;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class PetView : UIViewBase {
@@ -16,9 +17,10 @@ public class PetView : UIViewBase {
     public Image ImgRight;
     public Image ImgHead;
     public UIMoveObjMono uiMoveObjMono;
-    public Text TxtInputCount;
-    public Text TxtGiftCount;
+    public Text TxtCoinCount;
     public Button BtnChest;
+    public Text TxtInputCount;
+    public Text TxtDailyTotalInputCount;
     public Slider SliderInputCount;
 
     private PetController petController;
@@ -77,12 +79,14 @@ public class PetView : UIViewBase {
     }
 
     private void OnInputCountChange(int value) {
-        TxtInputCount.text = petController.InputCount.ToString();
-        SliderInputCount.value = petController.InputCount;
+        TxtInputCount.text = petController.CurrentRewardInputTimes.ToString();
+        TxtDailyTotalInputCount.text = $"Total:{value.ToString()}";
+        SliderInputCount.value = petController.CurrentRewardInputTimes/ (float)petController.CurrentRewardTotalInputTimes;
     }
 
     private void OnGoldCountChange(int obj) {
-        TxtGiftCount.text = petController.GoldCount.ToString();
+        TxtCoinCount.text = petController.CoinCount.ToString();
+
     }
 
     // 打开商店界面

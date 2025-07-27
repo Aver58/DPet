@@ -54,7 +54,7 @@ namespace Scripts.Bussiness.Controller {
                 return;
             }
 
-            var goldCount = ControllerManager.Instance.Get<PetController>().GoldCount;
+            var goldCount = ControllerManager.Instance.Get<PetController>().CoinCount;
             if (goldCount < config.price) {
                 // todo tip
                 Debug.LogError("Not enough input count to buy the item.");
@@ -79,7 +79,6 @@ namespace Scripts.Bussiness.Controller {
             }
 
             var petPool = PetMapConfig.GetPetPool((int)quality);
-            // 随机出一个宠物
             if (petPool.Count == 0) {
                 Debug.LogError($"No pets available for quality: {quality}");
                 return;
@@ -87,10 +86,9 @@ namespace Scripts.Bussiness.Controller {
 
             int randomIndex = Random.Range(0, petPool.Count);
             int petId = petPool[randomIndex];
-            Debug.Log($"Bought item with shopId: {shopId}, quality: {quality}, petId: {petId}");
-            // 进入仓库
+            Debug.Log($"Bought {shopId}, quality: {quality}, petId: {petId}");
             AddInventoryItem(petId);
-            ControllerManager.Instance.Get<PetController>().GoldCount -= config.price;
+            ControllerManager.Instance.Get<PetController>().CoinCount -= config.price;
         }
 
         #endregion
@@ -98,10 +96,8 @@ namespace Scripts.Bussiness.Controller {
 
     public struct InventoryItemData {
         public int Id;
-        public int Count;   // 数量
+        public int Exp;     // 经验值 点击次数
         public int Stage;   // 进化阶段
-        public QualityDefine Quality; // 品质
-        public float ClickAdd;// 收益加成
     }
 
     public enum QualityDefine {

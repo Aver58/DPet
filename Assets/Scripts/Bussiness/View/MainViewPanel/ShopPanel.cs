@@ -19,7 +19,7 @@ public class ShopPanel : ABSPanelBase {
     protected override void OnOpen() {
         base.OnOpen();
         petController.OnGoldCountChange += OnGoldCountChange;
-        OnGoldCountChange(petController.GoldCount);
+        OnGoldCountChange(petController.CoinCount);
     }
 
     protected override void OnClose() {
