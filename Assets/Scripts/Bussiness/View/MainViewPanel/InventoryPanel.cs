@@ -43,6 +43,7 @@ public class InventoryPanel : ABSPanelBase {
     }
 
     protected override void OnClose() {
+        ClearAllInventoryItems();
         base.OnClose();
     }
 
@@ -57,14 +58,24 @@ public class InventoryPanel : ABSPanelBase {
     }
 
     private void InitAllInventoryItems() {
-        var items = controller.GetAllInventoryItems();
-        Debug.Log($"InitAllInventoryItems count: {items.Count}");
-        for (int i = 0; i < items.Count; i++) {
-            var item = items[i];
+        var inventoryItemDatas = controller.GetAllInventoryItems();
+        Debug.Log($"InitAllInventoryItems count: {inventoryItemDatas.Count}");
+        for (int i = 0; i < inventoryItemDatas.Count; i++) {
+            var inventoryItemData = inventoryItemDatas[i];
             // todo 上限设置
             var inventoryItem = inventoryItems[i];
-            inventoryItem.Init(item);
+            inventoryItem.Init(inventoryItemData);
             inventoryItem.SetClickCallBack(OnClickInventoryItem);
+        }
+    }
+
+    private void ClearAllInventoryItems() {
+        var inventoryItemDatas = controller.GetAllInventoryItems();
+        for (int i = 0; i < inventoryItemDatas.Count; i++) {
+            var inventoryItem = inventoryItems[i];
+            if (inventoryItem != null) {
+                inventoryItem.Clear();
+            }
         }
     }
 
@@ -76,9 +87,10 @@ public class InventoryPanel : ABSPanelBase {
     }
 
     private void OnInventoryItemDataChange(InventoryItemData data) {
-        if (data.Id == currentData?.Id) {
-            return;
-        }
+        // if (data.Id != currentData?.Id) {
+        //     Debug.Log($"data.Id {data.Id} currentData?.Id {currentData?.Id}");
+        //     return;
+        // }
 
         currentData = data;
         var petId = data.PetId;
@@ -94,6 +106,7 @@ public class InventoryPanel : ABSPanelBase {
         var coinAdd = config.add;
         TxtCoinAdd.text = $"收益加成：+{coinAdd/100}%";
         TxtPrice.text = $"售价：{config.price.ToString()}";
+
         var levelUpText = "空";
         if (config.levelUpId == 0) {
             levelUpText = "已满级";
