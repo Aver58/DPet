@@ -4,9 +4,12 @@ using UnityEngine;
 
 namespace Scripts.Bussiness.Controller {
     public class SettingController : ControllerBase {
+        private int autoId = 0;
         public int LastSelectIndex { get; set; }
         private List<InventoryItemData> inventoryItemDatas = new List<InventoryItemData>();
         private int defaultPetId = 1;
+        private InventoryItemData CurrentInventoryItemData;
+
         public SettingController() {
             InitAllInventoryItem();
         }
@@ -27,18 +30,50 @@ namespace Scripts.Bussiness.Controller {
         private void InitAllInventoryItem() {
             // 初始化仓库数据，添加默认仓库宠物
             if (inventoryItemDatas.Count == 0) {
-                AddInventoryItem(defaultPetId);
+                CurrentInventoryItemData = AddInventoryItem(defaultPetId);
             }
         }
 
-        private void AddInventoryItem(int petId) {
-            inventoryItemDatas.Add(new InventoryItemData {
-                Id = petId,
-            });
+        public List<InventoryItemData> GetAllInventoryItems() {
+            return inventoryItemDatas;
         }
 
-        public List<InventoryItemData> GetInventoryItems() {
-            return inventoryItemDatas;
+        private InventoryItemData AddInventoryItem(int petId) {
+            var data = new InventoryItemData {
+                Id = autoId,
+                PetId = petId,
+                Stage = 1, // 默认阶段为1
+            };
+
+            autoId++;
+            inventoryItemDatas.Add(data);
+            return data;
+        }
+
+        public void AddCurrentPetExp() {
+            var data = CurrentInventoryItemData;
+            data.Exp++;
+            // 检查是否可以升级
+            if (data.Exp >= GetExpToLevelUp(data.PetId)) {
+                LevelUpCurrentPet();
+            }
+
+            EventManager.Instance.Dispatch(EventConstantId.OnInventoryItemDataChange, CurrentInventoryItemData);
+        }
+
+        private int GetExpToLevelUp(int petId) {
+            var config = PetMapConfig.Get(petId);
+            return config.exp;
+        }
+
+        private void LevelUpCurrentPet() {
+            var data = CurrentInventoryItemData;
+            var config = PetMapConfig.Get(data.PetId);
+            if (config.levelUpId != 0) {
+                data.PetId = config.levelUpId;
+                data.Exp = 0;
+                EventManager.Instance.Dispatch(EventConstantId.OnLevelUpCurrentPet, data);
+            }
         }
 
         #endregion
@@ -94,10 +129,11 @@ namespace Scripts.Bussiness.Controller {
         #endregion
     }
 
-    public struct InventoryItemData {
+    public class InventoryItemData {
         public int Id;
-        public int Exp;     // 经验值 点击次数
+        public int PetId;   // 宠物ID
         public int Stage;   // 进化阶段
+        public int Exp;     // 经验值 点击次数
     }
 
     public enum QualityDefine {

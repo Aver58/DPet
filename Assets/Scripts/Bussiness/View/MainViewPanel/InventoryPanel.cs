@@ -9,6 +9,7 @@ public class InventoryPanel : ABSPanelBase {
     public Transform PetInfoPanel;
     public Text TxtName;
     public Text TxtQuality;
+    public Text TxtStage;
     public Text TxtCoinAdd;
     public Text TxtPrice;
     public Text TxtInputTimesToLevelUp;
@@ -20,6 +21,7 @@ public class InventoryPanel : ABSPanelBase {
     private List<InventoryItem> inventoryItems = new List<InventoryItem>(36);
 
     protected override void OnInit() {
+        EventManager.Instance.Register<InventoryItemData>(EventConstantId.OnInventoryItemDataChange, OnInventoryItemDataChange);
         controller = ControllerManager.Instance.Get<SettingController>();
         if (controller == null) {
             Debug.LogError("SettingController is not initialized.");
@@ -29,7 +31,9 @@ public class InventoryPanel : ABSPanelBase {
         InitAllInventoryItemsGrid();
     }
 
-    protected override  void OnClear() { }
+    protected override void OnClear() {
+        EventManager.Instance.Unregister<InventoryItemData>(EventConstantId.OnInventoryItemDataChange, OnInventoryItemDataChange);
+    }
 
     protected override void OnOpen() {
         base.OnOpen();
@@ -53,26 +57,51 @@ public class InventoryPanel : ABSPanelBase {
     }
 
     private void InitAllInventoryItems() {
-        var items = controller.GetInventoryItems();
+        var items = controller.GetAllInventoryItems();
         Debug.Log($"InitAllInventoryItems count: {items.Count}");
         for (int i = 0; i < items.Count; i++) {
             var item = items[i];
             // todo 上限设置
             var inventoryItem = inventoryItems[i];
-            inventoryItem.Init(item.Id);
+            inventoryItem.Init(item);
+            inventoryItem.SetClickCallBack(OnClickInventoryItem);
         }
     }
 
-    public void OnClickInventoryItem(int itemId) {
-        Debug.Log($"Clicked inventory item with ID: {itemId}");
+    private InventoryItemData currentData;
+    private void OnClickInventoryItem(InventoryItemData data) {
+        Debug.Log($"Clicked inventory item with ID: {data.Id}, Pet ID: {data.PetId}");
         PetInfoPanel.gameObject.SetActive(true);
-        var config = PetMapConfig.Get(itemId);
+        OnInventoryItemDataChange(data);
+    }
+
+    private void OnInventoryItemDataChange(InventoryItemData data) {
+        if (data.Id == currentData?.Id) {
+            return;
+        }
+
+        currentData = data;
+        var petId = data.PetId;
+        var config = PetMapConfig.Get(petId);
         if (config == null) {
             return;
         }
 
         TxtName.text = config.name;
-        TxtQuality.text = ((QualityDefine)config.quality).ToString();
+        TxtQuality.text = $"品质：{((QualityDefine)config.quality).ToString()}";
+        TxtStage.text = $"阶段：{data.Stage.ToString()}";
+        var stage = data.Stage;
+        var coinAdd = config.add;
+        TxtCoinAdd.text = $"收益加成：+{coinAdd/100}%";
+        TxtPrice.text = $"售价：{config.price.ToString()}";
+        var levelUpText = "空";
+        if (config.levelUpId == 0) {
+            levelUpText = "已满级";
+        } else {
+            levelUpText = $"再点击{config.exp - data.Exp}次升级";
+        }
+
+        TxtInputTimesToLevelUp.text = levelUpText;
     }
 
 

@@ -21,6 +21,7 @@ namespace Scripts.Bussiness.Controller {
                 inputCount = value;
                 CurrentRewardInputTimes++;
                 OnInputCountChange?.Invoke(value);
+                AddExp();
                 AddGold();
             }
         }
@@ -92,6 +93,10 @@ namespace Scripts.Bussiness.Controller {
             }
 
             return 0;
+        }
+
+        private void AddExp() {
+            ControllerManager.Instance.Get<SettingController>().AddCurrentPetExp();
         }
     }
 }

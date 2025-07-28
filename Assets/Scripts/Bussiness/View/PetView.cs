@@ -8,7 +8,6 @@ using Scripts.Bussiness.Controller;
 using Kirurobo;
 using Scripts.Bussiness.GamePlay;
 using DG.Tweening;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class PetView : UIViewBase {
@@ -29,6 +28,8 @@ public class PetView : UIViewBase {
     private float animationInterval = 0.2f;
 
     protected override void OnInit() {
+        EventManager.Instance.Register<InventoryItemData>(EventConstantId.OnLevelUpCurrentPet, OnLevelUpCurrentPet);
+
         petController = Controller as PetController;
         if (petController == null) {
             Debug.LogError("PetController is not initialized.");
@@ -44,18 +45,24 @@ public class PetView : UIViewBase {
     }
 
     protected override void OnClear() {
+        EventManager.Instance.Unregister<InventoryItemData>(EventConstantId.OnLevelUpCurrentPet, OnLevelUpCurrentPet);
         base.OnClear();
     }
 
     private void InitMainPet() {
         var petId = PlayerPrefs.GetInt(PlayerPrefsManager.MainPetId, 1);
-        var config = PetMapConfig.Get(petId.ToString());
+        var config = PetMapConfig.Get(petId);
         if (config == null) {
             Debug.LogError($"Pet config not found for id: {petId}");
             return;
         }
-        var petSprite = config.sprite1;
+        var petSprite = config.sprite;
         ImgMain.SetSprite(petSprite);
+    }
+
+    private void OnLevelUpCurrentPet(InventoryItemData data) {
+        var config = PetMapConfig.Get(data.PetId);
+        ImgMain.SetSprite(config.sprite);
     }
 
     private void InitSetting() {
@@ -86,7 +93,6 @@ public class PetView : UIViewBase {
 
     private void OnGoldCountChange(int obj) {
         TxtCoinCount.text = petController.CoinCount.ToString();
-
     }
 
     // 打开商店界面
